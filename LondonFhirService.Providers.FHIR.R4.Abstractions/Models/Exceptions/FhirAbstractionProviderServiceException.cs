@@ -11,7 +11,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Pr
     internal class FhirAbstractionProviderServiceException : Xeption
     {
         public FhirAbstractionProviderServiceException(string message, Exception innerException, IDictionary data)
-            : base(message, innerException)
+            : base(message, innerException, data)
         { }
     }
 }
