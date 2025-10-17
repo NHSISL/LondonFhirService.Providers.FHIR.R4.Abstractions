@@ -6,445 +6,447 @@ using LondonFhirService.Operations.FHIR.R4.Abstractions.Operations;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
 {
-    public interface IFhirAbstractionProvider
+    public interface IFhirProvider
     {
+        /// <summary>Gets the unique name used to identify the provider.</summary>
+        string ProviderName { get; }
+
         /// <summary>Access FHIR Account resources.</summary>
-        IAccountOperation Accounts(string providerName);
+        IAccountOperation Accounts { get; }
 
         /// <summary>Access FHIR ActivityDefinition resources.</summary>
-        IActivityDefinitionOperation ActivityDefinitions(string providerName);
+        IActivityDefinitionOperation ActivityDefinitions { get; }
 
         /// <summary>Access FHIR AdverseEvent resources.</summary>
-        IAdverseEventOperation AdverseEvents(string providerName);
+        IAdverseEventOperation AdverseEvents { get; }
 
         /// <summary>Access FHIR AllergyIntolerance resources.</summary>
-        IAllergyIntoleranceOperation AllergyIntolerances(string providerName);
+        IAllergyIntoleranceOperation AllergyIntolerances { get; }
 
         /// <summary>Access FHIR Appointment resources.</summary>
-        IAppointmentOperation Appointments(string providerName);
+        IAppointmentOperation Appointments { get; }
 
         /// <summary>Access FHIR AppointmentResponse resources.</summary>
-        IAppointmentResponseOperation AppointmentResponses(string providerName);
+        IAppointmentResponseOperation AppointmentResponses { get; }
 
         /// <summary>Access FHIR AuditEvent resources.</summary>
-        IAuditEventOperation AuditEvents(string providerName);
+        IAuditEventOperation AuditEvents { get; }
 
         /// <summary>Access FHIR Basic resources.</summary>
-        IBasicOperation Basics(string providerName);
+        IBasicOperation Basics { get; }
 
         /// <summary>Access FHIR Binary resources.</summary>
-        IBinaryOperation Binaries(string providerName);
+        IBinaryOperation Binaries { get; }
 
         /// <summary>Access FHIR BiologicallyDerivedProduct resources.</summary>
-        IBiologicallyDerivedProductOperation BiologicallyDerivedProducts(string providerName);
+        IBiologicallyDerivedProductOperation BiologicallyDerivedProducts { get; }
 
         /// <summary>Access FHIR BodyStructure resources.</summary>
-        IBodyStructureOperation BodyStructures(string providerName);
+        IBodyStructureOperation BodyStructures { get; }
 
         /// <summary>Access FHIR Bundle resources.</summary>
-        IBundleOperation Bundles(string providerName);
+        IBundleOperation Bundles { get; }
 
         /// <summary>Access FHIR CapabilityStatement resources.</summary>
-        ICapabilityStatementOperation CapabilityStatements(string providerName);
+        ICapabilityStatementOperation CapabilityStatements { get; }
 
         /// <summary>Access FHIR CarePlan resources.</summary>
-        ICarePlanOperation CarePlans(string providerName);
+        ICarePlanOperation CarePlans { get; }
 
         /// <summary>Access FHIR CareTeam resources.</summary>
-        ICareTeamOperation CareTeams(string providerName);
+        ICareTeamOperation CareTeams { get; }
 
         /// <summary>Access FHIR CatalogEntry resources.</summary>
-        ICatalogEntryOperation CatalogEntries(string providerName);
+        ICatalogEntryOperation CatalogEntries { get; }
 
         /// <summary>Access FHIR ChargeItem resources.</summary>
-        IChargeItemOperation ChargeItems(string providerName);
+        IChargeItemOperation ChargeItems { get; }
 
         /// <summary>Access FHIR ChargeItemDefinition resources.</summary>
-        IChargeItemDefinitionOperation ChargeItemDefinitions(string providerName);
+        IChargeItemDefinitionOperation ChargeItemDefinitions { get; }
 
         /// <summary>Access FHIR Claim resources.</summary>
-        IClaimOperation Claims(string providerName);
+        IClaimOperation Claims { get; }
 
         /// <summary>Access FHIR ClaimResponse resources.</summary>
-        IClaimResponseOperation ClaimResponses(string providerName);
+        IClaimResponseOperation ClaimResponses { get; }
 
         /// <summary>Access FHIR ClinicalImpression resources.</summary>
-        IClinicalImpressionOperation ClinicalImpressions(string providerName);
+        IClinicalImpressionOperation ClinicalImpressions { get; }
 
         /// <summary>Access FHIR CodeSystem resources.</summary>
-        ICodeSystemOperation CodeSystems(string providerName);
+        ICodeSystemOperation CodeSystems { get; }
 
         /// <summary>Access FHIR Communication resources.</summary>
-        ICommunicationOperation Communications(string providerName);
+        ICommunicationOperation Communications { get; }
 
         /// <summary>Access FHIR CommunicationRequest resources.</summary>
-        ICommunicationRequestOperation CommunicationRequests(string providerName);
+        ICommunicationRequestOperation CommunicationRequests { get; }
 
         /// <summary>Access FHIR CompartmentDefinition resources.</summary>
-        ICompartmentDefinitionOperation CompartmentDefinitions(string providerName);
+        ICompartmentDefinitionOperation CompartmentDefinitions { get; }
 
         /// <summary>Access FHIR Composition resources.</summary>
-        ICompositionOperation Compositions(string providerName);
+        ICompositionOperation Compositions { get; }
 
         /// <summary>Access FHIR ConceptMap resources.</summary>
-        IConceptMapOperation ConceptMaps(string providerName);
+        IConceptMapOperation ConceptMaps { get; }
 
         /// <summary>Access FHIR Condition resources.</summary>
-        IConditionOperation Conditions(string providerName);
+        IConditionOperation Conditions { get; }
 
         /// <summary>Access FHIR Consent resources.</summary>
-        IConsentOperation Consents(string providerName);
+        IConsentOperation Consents { get; }
 
         /// <summary>Access FHIR Contract resources.</summary>
-        IContractOperation Contracts(string providerName);
+        IContractOperation Contracts { get; }
 
         /// <summary>Access FHIR Coverage resources.</summary>
-        ICoverageOperation Coverages(string providerName);
+        ICoverageOperation Coverages { get; }
 
         /// <summary>Access FHIR CoverageEligibilityRequest resources.</summary>
-        ICoverageEligibilityRequestOperation CoverageEligibilityRequests(string providerName);
+        ICoverageEligibilityRequestOperation CoverageEligibilityRequests { get; }
 
         /// <summary>Access FHIR CoverageEligibilityResponse resources.</summary>
-        ICoverageEligibilityResponseOperation CoverageEligibilityResponses(string providerName);
+        ICoverageEligibilityResponseOperation CoverageEligibilityResponses { get; }
 
         /// <summary>Access FHIR DetectedIssue resources.</summary>
-        IDetectedIssueOperation DetectedIssues(string providerName);
+        IDetectedIssueOperation DetectedIssues { get; }
 
         /// <summary>Access FHIR Device resources.</summary>
-        IDeviceOperation Devices(string providerName);
+        IDeviceOperation Devices { get; }
 
         /// <summary>Access FHIR DeviceDefinition resources.</summary>
-        IDeviceDefinitionOperation DeviceDefinitions(string providerName);
+        IDeviceDefinitionOperation DeviceDefinitions { get; }
 
         /// <summary>Access FHIR DeviceMetric resources.</summary>
-        IDeviceMetricOperation DeviceMetrics(string providerName);
+        IDeviceMetricOperation DeviceMetrics { get; }
 
         /// <summary>Access FHIR DeviceRequest resources.</summary>
-        IDeviceRequestOperation DeviceRequests(string providerName);
+        IDeviceRequestOperation DeviceRequests { get; }
 
         /// <summary>Access FHIR DeviceUseStatement resources.</summary>
-        IDeviceUseStatementOperation DeviceUseStatements(string providerName);
+        IDeviceUseStatementOperation DeviceUseStatements { get; }
 
         /// <summary>Access FHIR DiagnosticReport resources.</summary>
-        IDiagnosticReportOperation DiagnosticReports(string providerName);
+        IDiagnosticReportOperation DiagnosticReports { get; }
 
         /// <summary>Access FHIR DocumentManifest resources.</summary>
-        IDocumentManifestOperation DocumentManifests(string providerName);
+        IDocumentManifestOperation DocumentManifests { get; }
 
         /// <summary>Access FHIR DocumentReference resources.</summary>
-        IDocumentReferenceOperation DocumentReferences(string providerName);
+        IDocumentReferenceOperation DocumentReferences { get; }
 
         /// <summary>Access FHIR EffectEvidenceSynthesis resources.</summary>
-        IEffectEvidenceSynthesisOperation EffectEvidenceSyntheses(string providerName);
+        IEffectEvidenceSynthesisOperation EffectEvidenceSyntheses { get; }
 
         /// <summary>Access FHIR Encounter resources.</summary>
-        IEncounterOperation Encounters(string providerName);
+        IEncounterOperation Encounters { get; }
 
         /// <summary>Access FHIR Endpoint resources.</summary>
-        IEndpointOperation Endpoints(string providerName);
+        IEndpointOperation Endpoints { get; }
 
         /// <summary>Access FHIR EnrollmentRequest resources.</summary>
-        IEnrollmentRequestOperation EnrollmentRequests(string providerName);
+        IEnrollmentRequestOperation EnrollmentRequests { get; }
 
         /// <summary>Access FHIR EnrollmentResponse resources.</summary>
-        IEnrollmentResponseOperation EnrollmentResponses(string providerName);
+        IEnrollmentResponseOperation EnrollmentResponses { get; }
 
         /// <summary>Access FHIR EpisodeOfCare resources.</summary>
-        IEpisodeOfCareOperation EpisodesOfCare(string providerName);
+        IEpisodeOfCareOperation EpisodesOfCare { get; }
 
         /// <summary>Access FHIR EventDefinition resources.</summary>
-        IEventDefinitionOperation EventDefinitions(string providerName);
+        IEventDefinitionOperation EventDefinitions { get; }
 
         /// <summary>Access FHIR Evidence resources.</summary>
-        IEvidenceOperation Evidences(string providerName);
+        IEvidenceOperation Evidences { get; }
 
         /// <summary>Access FHIR EvidenceVariable resources.</summary>
-        IEvidenceVariableOperation EvidenceVariables(string providerName);
+        IEvidenceVariableOperation EvidenceVariables { get; }
 
         /// <summary>Access FHIR ExampleScenario resources.</summary>
-        IExampleScenarioOperation ExampleScenarios(string providerName);
+        IExampleScenarioOperation ExampleScenarios { get; }
 
         /// <summary>Access FHIR ExplanationOfBenefit resources.</summary>
-        IExplanationOfBenefitOperation ExplanationsOfBenefit(string providerName);
+        IExplanationOfBenefitOperation ExplanationsOfBenefit { get; }
 
         /// <summary>Access FHIR FamilyMemberHistory resources.</summary>
-        IFamilyMemberHistoryOperation FamilyMemberHistories(string providerName);
+        IFamilyMemberHistoryOperation FamilyMemberHistories { get; }
 
         /// <summary>Access FHIR Flag resources.</summary>
-        IFlagOperation Flags(string providerName);
+        IFlagOperation Flags { get; }
 
         /// <summary>Access FHIR Goal resources.</summary>
-        IGoalOperation Goals(string providerName);
+        IGoalOperation Goals { get; }
 
         /// <summary>Access FHIR GraphDefinition resources.</summary>
-        IGraphDefinitionOperation GraphDefinitions(string providerName);
+        IGraphDefinitionOperation GraphDefinitions { get; }
 
         /// <summary>Access FHIR Group resources.</summary>
-        IGroupOperation Groups(string providerName);
+        IGroupOperation Groups { get; }
 
         /// <summary>Access FHIR GuidanceResponse resources.</summary>
-        IGuidanceResponseOperation GuidanceResponses(string providerName);
+        IGuidanceResponseOperation GuidanceResponses { get; }
 
         /// <summary>Access FHIR HealthcareService resources.</summary>
-        IHealthcareServiceOperation HealthcareServices(string providerName);
+        IHealthcareServiceOperation HealthcareServices { get; }
 
         /// <summary>Access FHIR ImagingStudy resources.</summary>
-        IImagingStudyOperation ImagingStudies(string providerName);
+        IImagingStudyOperation ImagingStudies { get; }
 
         /// <summary>Access FHIR Immunization resources.</summary>
-        IImmunizationOperation Immunizations(string providerName);
+        IImmunizationOperation Immunizations { get; }
 
         /// <summary>Access FHIR ImmunizationEvaluation resources.</summary>
-        IImmunizationEvaluationOperation ImmunizationEvaluations(string providerName);
+        IImmunizationEvaluationOperation ImmunizationEvaluations { get; }
 
         /// <summary>Access FHIR ImmunizationRecommendation resources.</summary>
-        IImmunizationRecommendationOperation ImmunizationRecommendations(string providerName);
+        IImmunizationRecommendationOperation ImmunizationRecommendations { get; }
 
         /// <summary>Access FHIR ImplementationGuide resources.</summary>
-        IImplementationGuideOperation ImplementationGuides(string providerName);
+        IImplementationGuideOperation ImplementationGuides { get; }
 
         /// <summary>Access FHIR InsurancePlan resources.</summary>
-        IInsurancePlanOperation InsurancePlans(string providerName);
+        IInsurancePlanOperation InsurancePlans { get; }
 
         /// <summary>Access FHIR Invoice resources.</summary>
-        IInvoiceOperation Invoices(string providerName);
+        IInvoiceOperation Invoices { get; }
 
         /// <summary>Access FHIR Library resources.</summary>
-        ILibraryOperation Libraries(string providerName);
+        ILibraryOperation Libraries { get; }
 
         /// <summary>Access FHIR Linkage resources.</summary>
-        ILinkageOperation Linkages(string providerName);
+        ILinkageOperation Linkages { get; }
 
         /// <summary>Access FHIR List resources.</summary>
-        IListOperation Lists(string providerName);
+        IListOperation Lists { get; }
 
         /// <summary>Access FHIR Location resources.</summary>
-        ILocationOperation Locations(string providerName);
+        ILocationOperation Locations { get; }
 
         /// <summary>Access FHIR Measure resources.</summary>
-        IMeasureOperation Measures(string providerName);
+        IMeasureOperation Measures { get; }
 
         /// <summary>Access FHIR MeasureReport resources.</summary>
-        IMeasureReportOperation MeasureReports(string providerName);
+        IMeasureReportOperation MeasureReports { get; }
 
         /// <summary>Access FHIR Media resources.</summary>
-        IMediaOperation Media(string providerName);
+        IMediaOperation Media { get; }
 
         /// <summary>Access FHIR Medication resources.</summary>
-        IMedicationOperation Medications(string providerName);
+        IMedicationOperation Medications { get; }
 
         /// <summary>Access FHIR MedicationAdministration resources.</summary>
-        IMedicationAdministrationOperation MedicationAdministrations(string providerName);
+        IMedicationAdministrationOperation MedicationAdministrations { get; }
 
         /// <summary>Access FHIR MedicationDispense resources.</summary>
-        IMedicationDispenseOperation MedicationDispenses(string providerName);
+        IMedicationDispenseOperation MedicationDispenses { get; }
 
         /// <summary>Access FHIR MedicationKnowledge resources.</summary>
-        IMedicationKnowledgeOperation MedicationKnowledge(string providerName);
+        IMedicationKnowledgeOperation MedicationKnowledge { get; }
 
         /// <summary>Access FHIR MedicationRequest resources.</summary>
-        IMedicationRequestOperation MedicationRequests(string providerName);
+        IMedicationRequestOperation MedicationRequests { get; }
 
         /// <summary>Access FHIR MedicationStatement resources.</summary>
-        IMedicationStatementOperation MedicationStatements(string providerName);
+        IMedicationStatementOperation MedicationStatements { get; }
 
         /// <summary>Access FHIR MedicinalProduct resources.</summary>
-        IMedicinalProductOperation MedicinalProducts(string providerName);
+        IMedicinalProductOperation MedicinalProducts { get; }
 
         /// <summary>Access FHIR MedicinalProductAuthorization resources.</summary>
-        IMedicinalProductAuthorizationOperation MedicinalProductAuthorizations(string providerName);
+        IMedicinalProductAuthorizationOperation MedicinalProductAuthorizations { get; }
 
         /// <summary>Access FHIR MedicinalProductContraindication resources.</summary>
-        IMedicinalProductContraindicationOperation MedicinalProductContraindications(string providerName);
+        IMedicinalProductContraindicationOperation MedicinalProductContraindications { get; }
 
         /// <summary>Access FHIR MedicinalProductIndication resources.</summary>
-        IMedicinalProductIndicationOperation MedicinalProductIndications(string providerName);
+        IMedicinalProductIndicationOperation MedicinalProductIndications { get; }
 
         /// <summary>Access FHIR MedicinalProductIngredient resources.</summary>
-        IMedicinalProductIngredientOperation MedicinalProductIngredients(string providerName);
+        IMedicinalProductIngredientOperation MedicinalProductIngredients { get; }
 
         /// <summary>Access FHIR MedicinalProductInteraction resources.</summary>
-        IMedicinalProductInteractionOperation MedicinalProductInteractions(string providerName);
+        IMedicinalProductInteractionOperation MedicinalProductInteractions { get; }
 
         /// <summary>Access FHIR MedicinalProductManufactured resources.</summary>
-        IMedicinalProductManufacturedOperation MedicinalProductManufactureds(string providerName);
+        IMedicinalProductManufacturedOperation MedicinalProductManufactureds { get; }
 
         /// <summary>Access FHIR MedicinalProductPackaged resources.</summary>
-        IMedicinalProductPackagedOperation MedicinalProductPackageds(string providerName);
+        IMedicinalProductPackagedOperation MedicinalProductPackageds { get; }
 
         /// <summary>Access FHIR MedicinalProductPharmaceutical resources.</summary>
-        IMedicinalProductPharmaceuticalOperation MedicinalProductPharmaceuticals(string providerName);
+        IMedicinalProductPharmaceuticalOperation MedicinalProductPharmaceuticals { get; }
 
         /// <summary>Access FHIR MedicinalProductUndesirableEffect resources.</summary>
-        IMedicinalProductUndesirableEffectOperation MedicinalProductUndesirableEffects(string providerName);
+        IMedicinalProductUndesirableEffectOperation MedicinalProductUndesirableEffects { get; }
 
         /// <summary>Access FHIR MessageDefinition resources.</summary>
-        IMessageDefinitionOperation MessageDefinitions(string providerName);
+        IMessageDefinitionOperation MessageDefinitions { get; }
 
         /// <summary>Access FHIR MessageHeader resources.</summary>
-        IMessageHeaderOperation MessageHeaders(string providerName);
+        IMessageHeaderOperation MessageHeaders { get; }
 
         /// <summary>Access FHIR MolecularSequence resources.</summary>
-        IMolecularSequenceOperation MolecularSequences(string providerName);
+        IMolecularSequenceOperation MolecularSequences { get; }
 
         /// <summary>Access FHIR NamingSystem resources.</summary>
-        INamingSystemOperation NamingSystems(string providerName);
+        INamingSystemOperation NamingSystems { get; }
 
         /// <summary>Access FHIR NutritionOrder resources.</summary>
-        INutritionOrderOperation NutritionOrders(string providerName);
+        INutritionOrderOperation NutritionOrders { get; }
 
         /// <summary>Access FHIR Observation resources.</summary>
-        IObservationOperation Observations(string providerName);
+        IObservationOperation Observations { get; }
 
         /// <summary>Access FHIR ObservationDefinition resources.</summary>
-        IObservationDefinitionOperation ObservationDefinitions(string providerName);
+        IObservationDefinitionOperation ObservationDefinitions { get; }
 
         /// <summary>Access FHIR OperationDefinition resources.</summary>
-        IOperationDefinitionOperation OperationDefinitions(string providerName);
+        IOperationDefinitionOperation OperationDefinitions { get; }
 
         /// <summary>Access FHIR OperationOutcome resources.</summary>
-        IOperationOutcomeOperation OperationOutcomes(string providerName);
+        IOperationOutcomeOperation OperationOutcomes { get; }
 
         /// <summary>Access FHIR Organization resources.</summary>
-        IOrganizationOperation Organizations(string providerName);
+        IOrganizationOperation Organizations { get; }
 
         /// <summary>Access FHIR OrganizationAffiliation resources.</summary>
-        IOrganizationAffiliationOperation OrganizationAffiliations(string providerName);
+        IOrganizationAffiliationOperation OrganizationAffiliations { get; }
 
         /// <summary>Access FHIR Parameters resources.</summary>
-        IParametersOperation Parameters(string providerName);
+        IParametersOperation Parameters { get; }
 
         /// <summary>Access FHIR Patient resources.</summary>
-        IPatientOperation Patients(string providerName);
+        IPatientOperation Patients { get; }
 
         /// <summary>Access FHIR PaymentNotice resources.</summary>
-        IPaymentNoticeOperation PaymentNotices(string providerName);
+        IPaymentNoticeOperation PaymentNotices { get; }
 
         /// <summary>Access FHIR PaymentReconciliation resources.</summary>
-        IPaymentReconciliationOperation PaymentReconciliations(string providerName);
+        IPaymentReconciliationOperation PaymentReconciliations { get; }
 
         /// <summary>Access FHIR Person resources.</summary>
-        IPersonOperation Persons(string providerName);
+        IPersonOperation Persons { get; }
 
         /// <summary>Access FHIR PlanDefinition resources.</summary>
-        IPlanDefinitionOperation PlanDefinitions(string providerName);
+        IPlanDefinitionOperation PlanDefinitions { get; }
 
         /// <summary>Access FHIR Practitioner resources.</summary>
-        IPractitionerOperation Practitioners(string providerName);
+        IPractitionerOperation Practitioners { get; }
 
         /// <summary>Access FHIR PractitionerRole resources.</summary>
-        IPractitionerRoleOperation PractitionerRoles(string providerName);
+        IPractitionerRoleOperation PractitionerRoles { get; }
 
         /// <summary>Access FHIR Procedure resources.</summary>
-        IProcedureOperation Procedures(string providerName);
+        IProcedureOperation Procedures { get; }
 
         /// <summary>Access FHIR Provenance resources.</summary>
-        IProvenanceOperation Provenances(string providerName);
+        IProvenanceOperation Provenances { get; }
 
         /// <summary>Access FHIR Questionnaire resources.</summary>
-        IQuestionnaireOperation Questionnaires(string providerName);
+        IQuestionnaireOperation Questionnaires { get; }
 
         /// <summary>Access FHIR QuestionnaireResponse resources.</summary>
-        IQuestionnaireResponseOperation QuestionnaireResponses(string providerName);
+        IQuestionnaireResponseOperation QuestionnaireResponses { get; }
 
         /// <summary>Access FHIR RelatedPerson resources.</summary>
-        IRelatedPersonOperation RelatedPersons(string providerName);
+        IRelatedPersonOperation RelatedPersons { get; }
 
         /// <summary>Access FHIR RequestGroup resources.</summary>
-        IRequestGroupOperation RequestGroups(string providerName);
+        IRequestGroupOperation RequestGroups { get; }
 
         /// <summary>Access FHIR ResearchDefinition resources.</summary>
-        IResearchDefinitionOperation ResearchDefinitions(string providerName);
+        IResearchDefinitionOperation ResearchDefinitions { get; }
 
         /// <summary>Access FHIR ResearchElementDefinition resources.</summary>
-        IResearchElementDefinitionOperation ResearchElementDefinitions(string providerName);
+        IResearchElementDefinitionOperation ResearchElementDefinitions { get; }
 
         /// <summary>Access FHIR ResearchStudy resources.</summary>
-        IResearchStudyOperation ResearchStudies(string providerName);
+        IResearchStudyOperation ResearchStudies { get; }
 
         /// <summary>Access FHIR ResearchSubject resources.</summary>
-        IResearchSubjectOperation ResearchSubjects(string providerName);
+        IResearchSubjectOperation ResearchSubjects { get; }
 
         /// <summary>Access FHIR RiskAssessment resources.</summary>
-        IRiskAssessmentOperation RiskAssessments(string providerName);
+        IRiskAssessmentOperation RiskAssessments { get; }
 
         /// <summary>Access FHIR RiskEvidenceSynthesis resources.</summary>
-        IRiskEvidenceSynthesisOperation RiskEvidenceSyntheses(string providerName);
+        IRiskEvidenceSynthesisOperation RiskEvidenceSyntheses { get; }
 
         /// <summary>Access FHIR Schedule resources.</summary>
-        IScheduleOperation Schedules(string providerName);
+        IScheduleOperation Schedules { get; }
 
         /// <summary>Access FHIR SearchParameter resources.</summary>
-        ISearchParameterOperation SearchParameters(string providerName);
+        ISearchParameterOperation SearchParameters { get; }
 
         /// <summary>Access FHIR ServiceRequest resources.</summary>
-        IServiceRequestOperation ServiceRequests(string providerName);
+        IServiceRequestOperation ServiceRequests { get; }
 
         /// <summary>Access FHIR Slot resources.</summary>
-        ISlotOperation Slots(string providerName);
+        ISlotOperation Slots { get; }
 
         /// <summary>Access FHIR Specimen resources.</summary>
-        ISpecimenOperation Specimens(string providerName);
+        ISpecimenOperation Specimens { get; }
 
         /// <summary>Access FHIR SpecimenDefinition resources.</summary>
-        ISpecimenDefinitionOperation SpecimenDefinitions(string providerName);
+        ISpecimenDefinitionOperation SpecimenDefinitions { get; }
 
         /// <summary>Access FHIR StructureDefinition resources.</summary>
-        IStructureDefinitionOperation StructureDefinitions(string providerName);
+        IStructureDefinitionOperation StructureDefinitions { get; }
 
         /// <summary>Access FHIR StructureMap resources.</summary>
-        IStructureMapOperation StructureMaps(string providerName);
+        IStructureMapOperation StructureMaps { get; }
 
         /// <summary>Access FHIR Subscription resources.</summary>
-        ISubscriptionOperation Subscriptions(string providerName);
+        ISubscriptionOperation Subscriptions { get; }
 
         /// <summary>Access FHIR Substance resources.</summary>
-        ISubstanceOperation Substances(string providerName);
+        ISubstanceOperation Substances { get; }
 
         /// <summary>Access FHIR SubstanceNucleicAcid resources.</summary>
-        ISubstanceNucleicAcidOperation SubstanceNucleicAcids(string providerName);
+        ISubstanceNucleicAcidOperation SubstanceNucleicAcids { get; }
 
         /// <summary>Access FHIR SubstancePolymer resources.</summary>
-        ISubstancePolymerOperation SubstancePolymers(string providerName);
+        ISubstancePolymerOperation SubstancePolymers { get; }
 
         /// <summary>Access FHIR SubstanceProtein resources.</summary>
-        ISubstanceProteinOperation SubstanceProteins(string providerName);
+        ISubstanceProteinOperation SubstanceProteins { get; }
 
         /// <summary>Access FHIR SubstanceReferenceInformation resources.</summary>
-        ISubstanceReferenceInformationOperation SubstanceReferenceInformations(string providerName);
+        ISubstanceReferenceInformationOperation SubstanceReferenceInformations { get; }
 
         /// <summary>Access FHIR SubstanceSourceMaterial resources.</summary>
-        ISubstanceSourceMaterialOperation SubstanceSourceMaterials(string providerName);
+        ISubstanceSourceMaterialOperation SubstanceSourceMaterials { get; }
 
         /// <summary>Access FHIR SubstanceSpecification resources.</summary>
-        ISubstanceSpecificationOperation SubstanceSpecifications(string providerName);
+        ISubstanceSpecificationOperation SubstanceSpecifications { get; }
 
         /// <summary>Access FHIR SupplyDelivery resources.</summary>
-        ISupplyDeliveryOperation SupplyDeliveries(string providerName);
+        ISupplyDeliveryOperation SupplyDeliveries { get; }
 
         /// <summary>Access FHIR SupplyRequest resources.</summary>
-        ISupplyRequestOperation SupplyRequests(string providerName);
+        ISupplyRequestOperation SupplyRequests { get; }
 
         /// <summary>Access FHIR Task resources.</summary>
-        ITaskOperation Tasks(string providerName);
+        ITaskOperation Tasks { get; }
 
         /// <summary>Access FHIR TerminologyCapabilities resources.</summary>
-        ITerminologyCapabilitiesOperation TerminologyCapabilities(string providerName);
+        ITerminologyCapabilitiesOperation TerminologyCapabilities { get; }
 
         /// <summary>Access FHIR TestReport resources.</summary>
-        ITestReportOperation TestReports(string providerName);
+        ITestReportOperation TestReports { get; }
 
         /// <summary>Access FHIR TestScript resources.</summary>
-        ITestScriptOperation TestScripts(string providerName);
+        ITestScriptOperation TestScripts { get; }
 
         /// <summary>Access FHIR ValueSet resources.</summary>
-        IValueSetOperation ValueSets(string providerName);
+        IValueSetOperation ValueSets { get; }
 
         /// <summary>Access FHIR VerificationResult resources.</summary>
-        IVerificationResultOperation VerificationResults(string providerName);
+        IVerificationResultOperation VerificationResults { get; }
 
         /// <summary>Access FHIR VisionPrescription resources.</summary>
-        IVisionPrescriptionOperation VisionPrescriptions(string providerName);
-
+        IVisionPrescriptionOperation VisionPrescriptions { get; }
     }
 }
