@@ -10,7 +10,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Pr
     internal class FhirAbstractionProviderValidationException : Xeption
     {
         public FhirAbstractionProviderValidationException(string message, Xeption innerException, IDictionary data)
-            : base(message, innerException)
+            : base(message, innerException, data)
         { }
     }
 }
