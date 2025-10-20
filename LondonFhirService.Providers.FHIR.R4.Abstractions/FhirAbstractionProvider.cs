@@ -2,6 +2,7 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
+using System.Collections.Generic;
 using LondonFhirService.Operations.FHIR.R4.Abstractions.Operations;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations;
 
@@ -11,7 +12,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     {
         private IProviderService providerService { get; set; }
 
-        public FhirAbstractionProvider(IFhirProvider[] fhirProviders) =>
+        public FhirAbstractionProvider(IEnumerable<IFhirProvider> fhirProviders) =>
             this.providerService = new ProviderService(fhirProviders);
 
         public IAccountOperation Accounts(string providerName) =>

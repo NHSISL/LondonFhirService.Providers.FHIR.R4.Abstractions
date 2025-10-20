@@ -3,14 +3,15 @@
 // ---------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
 {
     internal class ProviderService : IProviderService
     {
-        private readonly IFhirProvider[] fhirProviders;
+        private readonly IEnumerable<IFhirProvider> fhirProviders;
 
-        public ProviderService(IFhirProvider[] fhirProviders)
+        public ProviderService(IEnumerable<IFhirProvider> fhirProviders)
         {
             this.fhirProviders = fhirProviders;
         }

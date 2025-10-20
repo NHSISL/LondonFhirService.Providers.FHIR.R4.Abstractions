@@ -54,4 +54,10 @@
 	  <PackageReference Include="Xeption" Version="2.8.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit" />
+		<InternalsVisibleTo Include="LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Acceptance" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+	</ItemGroup>
+
 </Project>
