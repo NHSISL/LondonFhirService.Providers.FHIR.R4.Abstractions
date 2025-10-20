@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
 {
-    internal class ProviderService : IProviderService
+    internal partial class ProviderService : IProviderService
     {
         private readonly IEnumerable<IFhirProvider> fhirProviders;
 
@@ -17,10 +17,15 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
             this.fhirProviders = fhirProviders;
         }
 
-        public IFhirProvider GetProviderByName(string providerName)
+        public IFhirProvider GetProviderByName(string providerName) =>
+        TryCatch(() =>
         {
-            return this.fhirProviders.FirstOrDefault(provider =>
+            ValidateOnGetProviderByName(providerName);
+
+            IFhirProvider fhirProvider = this.fhirProviders.FirstOrDefault(provider =>
                 string.Equals(provider.ProviderName, providerName, StringComparison.OrdinalIgnoreCase));
-        }
+
+            return fhirProvider;
+        });
     }
 }
