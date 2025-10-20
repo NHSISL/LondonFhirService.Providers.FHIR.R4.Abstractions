@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
 {
@@ -16,7 +17,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
             this.fhirProviders = fhirProviders;
         }
 
-        public IFhirProvider GetProviderByName(string providerName) =>
-            throw new NotImplementedException();
+        public IFhirProvider GetProviderByName(string providerName)
+        {
+            return this.fhirProviders.FirstOrDefault(provider =>
+                string.Equals(provider.ProviderName, providerName, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }
