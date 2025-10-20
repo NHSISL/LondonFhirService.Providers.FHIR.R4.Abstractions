@@ -3,7 +3,8 @@
 // ---------------------------------------------------------
 
 using System;
-using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Exceptions;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers.Exceptions;
 using Xeptions;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
@@ -18,7 +19,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
             {
                 return returningFunction();
             }
-            catch (ProviderValidationException providerValidationException)
+            catch (ProviderServiceValidationException providerValidationException)
             {
                 throw CreateValidationException(providerValidationException);
             }
@@ -26,7 +27,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
             {
                 throw CreateValidationException(providerDependencyValidationException.InnerException as Xeption);
             }
-            catch (ProviderDependencyException providerDependencyException)
+            catch (ProviderServiceDependencyException providerDependencyException)
             {
                 throw CreateDependencyException(providerDependencyException);
             }

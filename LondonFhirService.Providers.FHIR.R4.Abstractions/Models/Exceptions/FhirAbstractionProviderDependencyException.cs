@@ -5,7 +5,7 @@
 using System.Collections;
 using Xeptions;
 
-namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers
+namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Exceptions
 {
     internal class FhirAbstractionProviderDependencyException : Xeption
     {

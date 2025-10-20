@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models;
 using Moq;
+using Tynamix.ObjectFiller;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.Foundations.Providers
 {
@@ -37,5 +38,11 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
                 CallBase = true
             };
         }
+
+        private static string GetRandomString() =>
+            new MnemonicString(wordCount: GetRandomNumber()).GetValue();
+
+        private static int GetRandomNumber() =>
+            new IntRange(min: 2, max: 10).GetValue();
     }
 }

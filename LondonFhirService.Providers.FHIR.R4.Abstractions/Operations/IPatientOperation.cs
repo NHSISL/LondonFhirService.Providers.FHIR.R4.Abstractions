@@ -1,7 +1,7 @@
 using System;
 using Hl7.Fhir.Model;
 
-namespace LondonFhirService.Operations.FHIR.R4.Abstractions.Operations
+namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Operations
 {
     /// <summary>R4 Patient provider including $everything and $match operations.</summary>
     public interface IPatientOperation : IResourceOperation<Patient>

@@ -5,7 +5,7 @@
 using System;
 using Xeptions;
 
-namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers
+namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers.Exceptions
 {
     internal class ProviderServiceException : Xeption
     {

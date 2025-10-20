@@ -4,11 +4,11 @@
 
 using Xeptions;
 
-namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers
+namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers.Exceptions
 {
-    internal class ProviderValidationException : Xeption
+    internal class ProviderServiceValidationException : Xeption
     {
-        public ProviderValidationException(string message, Xeption innerException)
+        public ProviderServiceValidationException(string message, Xeption innerException)
             : base(message, innerException)
         { }
     }

@@ -3,7 +3,7 @@
 // ---------------------------------------------------------
 
 using System;
-using LondonFhirService.Operations.FHIR.R4.Abstractions.Operations;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Operations;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
 {

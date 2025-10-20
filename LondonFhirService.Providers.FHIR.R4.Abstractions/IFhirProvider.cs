@@ -2,7 +2,7 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
-using LondonFhirService.Operations.FHIR.R4.Abstractions.Operations;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Operations;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
 {
