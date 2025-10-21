@@ -46,6 +46,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
             actualProviderServiceValidationException.Should()
                 .BeEquivalentTo(expectedProviderServiceValidationException);
 
+            providerServiceMock.Verify(service =>
+                service.ValidateOnGetProviderByName(inputProviderName),
+                    Times.Once);
+
             providerServiceMock.VerifyNoOtherCalls();
         }
 
@@ -73,7 +77,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
 
             // when
             Action getProviderByNameAction = () =>
-                providerServiceMock.Object.GetProviderByName(invalidProviderName);
+                providerService.GetProviderByName(invalidProviderName);
 
             ProviderServiceValidationException actualProviderServiceValidationException =
                 Assert.Throws<ProviderServiceValidationException>(getProviderByNameAction);
@@ -81,8 +85,6 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
             // then
             actualProviderServiceValidationException.Should()
                 .BeEquivalentTo(expectedProviderServiceValidationException);
-
-            providerServiceMock.VerifyNoOtherCalls();
         }
     }
 }

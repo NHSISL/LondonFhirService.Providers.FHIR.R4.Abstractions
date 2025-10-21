@@ -19,7 +19,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
 
             // when
             IFhirProvider actualProvider =
-                providerServiceMock.Object.GetProviderByName(provider.ProviderName);
+                providerService.GetProviderByName(provider.ProviderName);
 
             // then
             actualProvider.ProviderName.Should().BeEquivalentTo(expectedProvider.ProviderName);

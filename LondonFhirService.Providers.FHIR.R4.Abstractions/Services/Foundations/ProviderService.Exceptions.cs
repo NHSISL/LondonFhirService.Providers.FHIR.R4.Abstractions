@@ -2,6 +2,7 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
+using System;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers.Exceptions;
 using Xeptions;
 
@@ -25,6 +26,15 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
             {
                 throw CreateValidationException(invalidProviderServiceException);
             }
+            catch (Exception exception)
+            {
+                var failedProviderServiceException =
+                    new FailedProviderServiceException(
+                        message: "Failed provider service occurred, please contact support",
+                        innerException: exception);
+
+                throw CreateServiceException(failedProviderServiceException);
+            }
         }
 
         private ProviderServiceValidationException CreateValidationException(Xeption exception)
@@ -35,6 +45,17 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
                     innerException: exception);
 
             return providerServiceValidationException;
+        }
+
+        private ProviderServiceException CreateServiceException(
+            Xeption exception)
+        {
+            var providerServiceException =
+                new ProviderServiceException(
+                    message: "Provider service error occurred, contact support.",
+                    innerException: exception);
+
+            return providerServiceException;
         }
     }
 }

@@ -30,6 +30,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
                 CallBase = true
             };
 
+            providerServiceMock.Setup(service =>
+                service.ValidateOnGetProviderByName(It.IsAny<string>()))
+                    .Throws(serviceException);
+
             var failedProviderServiceException =
                 new FailedProviderServiceException(
                     message: "Failed provider service occurred, please contact support",
@@ -37,7 +41,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
 
             var expectedProviderServiceException =
                 new ProviderServiceException(
-                    message: "Provider validation errors occurred, please try again.",
+                    message: "Provider service error occurred, contact support.",
                     innerException: failedProviderServiceException);
 
             // when
@@ -50,6 +54,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
             // then
             actualProviderServiceException.Should()
                 .BeEquivalentTo(expectedProviderServiceException);
+
+            providerServiceMock.Verify(service =>
+                service.ValidateOnGetProviderByName(It.IsAny<string>()),
+                    Times.Once);
 
             providerServiceMock.VerifyNoOtherCalls();
         }

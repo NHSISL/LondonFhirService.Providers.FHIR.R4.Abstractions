@@ -5,7 +5,6 @@
 using System.Collections.Generic;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models;
-using Moq;
 using Tynamix.ObjectFiller;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.Foundations.Providers
@@ -13,7 +12,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
     public partial class ProviderServiceTests
     {
         private readonly IEnumerable<IFhirProvider> fhirProviders;
-        private readonly Mock<ProviderService> providerServiceMock;
+        private readonly ProviderService providerService;
 
         public ProviderServiceTests()
         {
@@ -33,10 +32,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
                 }
             };
 
-            this.providerServiceMock = new Mock<ProviderService>(this.fhirProviders)
-            {
-                CallBase = true
-            };
+            this.providerService = new ProviderService(this.fhirProviders);
         }
 
         private static string GetRandomString() =>

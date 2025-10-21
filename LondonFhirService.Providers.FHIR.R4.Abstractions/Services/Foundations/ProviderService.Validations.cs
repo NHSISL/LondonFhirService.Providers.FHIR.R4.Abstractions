@@ -12,7 +12,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
 {
     internal partial class ProviderService : IProviderService
     {
-        private void ValidateOnGetProviderByName(string providerName)
+        virtual internal void ValidateOnGetProviderByName(string providerName)
         {
             ValidateProvidersIsNotNull(this.fhirProviders);
 
