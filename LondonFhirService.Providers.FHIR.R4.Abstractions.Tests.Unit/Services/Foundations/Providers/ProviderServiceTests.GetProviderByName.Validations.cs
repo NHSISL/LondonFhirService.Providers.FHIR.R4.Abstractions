@@ -15,7 +15,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
     public partial class ProviderServiceTests
     {
         [Fact]
-        public async Task ShouldThrowValidationExceptionOnGetProviderByName()
+        public async Task ShouldThrowNullValidationExceptionOnGetProviderByNameAsync()
         {
             // given
             IEnumerable<IFhirProvider> nullFhirProvider = null;
@@ -43,7 +43,45 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
                 Assert.Throws<ProviderServiceValidationException>(getProviderByNameAction);
 
             // then
-            actualProviderServiceValidationException.Should().BeEquivalentTo(expectedProviderServiceValidationException);
+            actualProviderServiceValidationException.Should()
+                .BeEquivalentTo(expectedProviderServiceValidationException);
+
+            providerServiceMock.VerifyNoOtherCalls();
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData(" ")]
+        public async Task ShouldThrowValidationExceptionOnGetProviderByNameAsync(string invalidText)
+        {
+            // given
+            string invalidProviderName = invalidText;
+
+            var invalidProviderServiceException =
+                new InvalidProviderServiceException(
+                    message: "Invalid decision. Please correct the errors and try again.");
+
+            invalidProviderServiceException.AddData(
+                key: "providerName",
+                values: "Text is required");
+
+            var expectedProviderServiceValidationException =
+                new ProviderServiceValidationException(
+                    message: "Provider validation errors occurred, please try again.",
+                    innerException: invalidProviderServiceException);
+
+            // when
+            Action getProviderByNameAction = () =>
+                providerServiceMock.Object.GetProviderByName(invalidProviderName);
+
+            ProviderServiceValidationException actualProviderServiceValidationException =
+                Assert.Throws<ProviderServiceValidationException>(getProviderByNameAction);
+
+            // then
+            actualProviderServiceValidationException.Should()
+                .BeEquivalentTo(expectedProviderServiceValidationException);
+
             providerServiceMock.VerifyNoOtherCalls();
         }
     }

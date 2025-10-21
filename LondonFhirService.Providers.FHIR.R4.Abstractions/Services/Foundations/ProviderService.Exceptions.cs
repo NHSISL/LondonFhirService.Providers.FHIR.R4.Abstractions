@@ -21,6 +21,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
             {
                 throw CreateValidationException(nullProviderServiceException);
             }
+            catch (InvalidProviderServiceException invalidProviderServiceException)
+            {
+                throw CreateValidationException(invalidProviderServiceException);
+            }
         }
 
         private ProviderServiceValidationException CreateValidationException(Xeption exception)

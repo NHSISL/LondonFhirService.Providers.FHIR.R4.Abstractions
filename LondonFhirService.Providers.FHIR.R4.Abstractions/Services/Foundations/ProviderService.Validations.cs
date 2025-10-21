@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Foundations.Providers.Exceptions;
+using Xeptions;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
 {
@@ -14,6 +15,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
         private void ValidateOnGetProviderByName(string providerName)
         {
             ValidateProvidersIsNotNull(this.fhirProviders);
+
+            Validate<InvalidProviderServiceException>(
+               message: "Invalid decision. Please correct the errors and try again.",
+               (Rule: IsInvalid(providerName), Parameter: nameof(providerName)));
         }
 
         private void ValidateProvidersIsNotNull(IEnumerable<IFhirProvider> fhirProviders)
@@ -22,6 +27,30 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
             {
                 throw new NullProviderServiceException(message: "Provider is null.");
             }
+        }
+
+        private static dynamic IsInvalid(string text) => new
+        {
+            Condition = String.IsNullOrWhiteSpace(text),
+            Message = "Text is required"
+        };
+
+        private static void Validate<T>(string message, params (dynamic Rule, string Parameter)[] validations)
+            where T : Xeption
+        {
+            var invalidDataException = (T)Activator.CreateInstance(typeof(T), message);
+
+            foreach ((dynamic rule, string parameter) in validations)
+            {
+                if (rule.Condition)
+                {
+                    invalidDataException.UpsertDataList(
+                        key: parameter,
+                        value: rule.Message);
+                }
+            }
+
+            invalidDataException.ThrowIfContainsErrors();
         }
     }
 }
