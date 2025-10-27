@@ -3,7 +3,7 @@
 // ---------------------------------------------------------
 
 using System.Collections.Generic;
-using LondonFhirService.Providers.FHIR.R4.Abstractions.Operations;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
@@ -15,442 +15,442 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         public FhirAbstractionProvider(IEnumerable<IFhirProvider> fhirProviders) =>
             this.providerService = new ProviderService(fhirProviders);
 
-        public IAccountOperation Accounts(string providerName) =>
+        public IAccountResource Accounts(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Accounts);
 
-        public IActivityDefinitionOperation ActivityDefinitions(string providerName) =>
+        public IActivityDefinitionResource ActivityDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ActivityDefinitions);
 
-        public IAdverseEventOperation AdverseEvents(string providerName) =>
+        public IAdverseEventResource AdverseEvents(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).AdverseEvents);
 
-        public IAllergyIntoleranceOperation AllergyIntolerances(string providerName) =>
+        public IAllergyIntoleranceResource AllergyIntolerances(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).AllergyIntolerances);
 
-        public IAppointmentResponseOperation AppointmentResponses(string providerName) =>
+        public IAppointmentResponseResource AppointmentResponses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).AppointmentResponses);
 
-        public IAppointmentOperation Appointments(string providerName) =>
+        public IAppointmentResource Appointments(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Appointments);
 
-        public IAuditEventOperation AuditEvents(string providerName) =>
+        public IAuditEventResource AuditEvents(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).AuditEvents);
 
-        public IBasicOperation Basics(string providerName) =>
+        public IBasicResource Basics(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Basics);
 
-        public IBinaryOperation Binaries(string providerName) =>
+        public IBinaryResource Binaries(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Binaries);
 
-        public IBiologicallyDerivedProductOperation BiologicallyDerivedProducts(string providerName) =>
+        public IBiologicallyDerivedProductResource BiologicallyDerivedProducts(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).BiologicallyDerivedProducts);
 
-        public IBodyStructureOperation BodyStructures(string providerName) =>
+        public IBodyStructureResource BodyStructures(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).BodyStructures);
 
-        public IBundleOperation Bundles(string providerName) =>
+        public IBundleResource Bundles(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Bundles);
 
-        public ICapabilityStatementOperation CapabilityStatements(string providerName) =>
+        public ICapabilityStatementResource CapabilityStatements(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CapabilityStatements);
 
-        public ICarePlanOperation CarePlans(string providerName) =>
+        public ICarePlanResource CarePlans(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CarePlans);
 
-        public ICareTeamOperation CareTeams(string providerName) =>
+        public ICareTeamResource CareTeams(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CareTeams);
 
-        public ICatalogEntryOperation CatalogEntries(string providerName) =>
+        public ICatalogEntryResource CatalogEntries(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CatalogEntries);
 
-        public IChargeItemDefinitionOperation ChargeItemDefinitions(string providerName) =>
+        public IChargeItemDefinitionResource ChargeItemDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ChargeItemDefinitions);
 
-        public IChargeItemOperation ChargeItems(string providerName) =>
+        public IChargeItemResource ChargeItems(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ChargeItems);
 
-        public IClaimResponseOperation ClaimResponses(string providerName) =>
+        public IClaimResponseResource ClaimResponses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ClaimResponses);
 
-        public IClaimOperation Claims(string providerName) =>
+        public IClaimResource Claims(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Claims);
 
-        public IClinicalImpressionOperation ClinicalImpressions(string providerName) =>
+        public IClinicalImpressionResource ClinicalImpressions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ClinicalImpressions);
 
-        public ICodeSystemOperation CodeSystems(string providerName) =>
+        public ICodeSystemResource CodeSystems(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CodeSystems);
 
-        public ICommunicationRequestOperation CommunicationRequests(string providerName) =>
+        public ICommunicationRequestResource CommunicationRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CommunicationRequests);
 
-        public ICommunicationOperation Communications(string providerName) =>
+        public ICommunicationResource Communications(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Communications);
 
-        public ICompartmentDefinitionOperation CompartmentDefinitions(string providerName) =>
+        public ICompartmentDefinitionResource CompartmentDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CompartmentDefinitions);
 
-        public ICompositionOperation Compositions(string providerName) =>
+        public ICompositionResource Compositions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Compositions);
 
-        public IConceptMapOperation ConceptMaps(string providerName) =>
+        public IConceptMapResource ConceptMaps(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ConceptMaps);
 
-        public IConditionOperation Conditions(string providerName) =>
+        public IConditionResource Conditions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Conditions);
 
-        public IConsentOperation Consents(string providerName) =>
+        public IConsentResource Consents(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Consents);
 
-        public IContractOperation Contracts(string providerName) =>
+        public IContractResource Contracts(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Contracts);
 
-        public ICoverageEligibilityRequestOperation CoverageEligibilityRequests(string providerName) =>
+        public ICoverageEligibilityRequestResource CoverageEligibilityRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CoverageEligibilityRequests);
 
-        public ICoverageEligibilityResponseOperation CoverageEligibilityResponses(string providerName) =>
+        public ICoverageEligibilityResponseResource CoverageEligibilityResponses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).CoverageEligibilityResponses);
 
-        public ICoverageOperation Coverages(string providerName) =>
+        public ICoverageResource Coverages(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Coverages);
 
-        public IDetectedIssueOperation DetectedIssues(string providerName) =>
+        public IDetectedIssueResource DetectedIssues(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DetectedIssues);
 
-        public IDeviceDefinitionOperation DeviceDefinitions(string providerName) =>
+        public IDeviceDefinitionResource DeviceDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DeviceDefinitions);
 
-        public IDeviceMetricOperation DeviceMetrics(string providerName) =>
+        public IDeviceMetricResource DeviceMetrics(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DeviceMetrics);
 
-        public IDeviceRequestOperation DeviceRequests(string providerName) =>
+        public IDeviceRequestResource DeviceRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DeviceRequests);
 
-        public IDeviceOperation Devices(string providerName) =>
+        public IDeviceResource Devices(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Devices);
 
-        public IDeviceUseStatementOperation DeviceUseStatements(string providerName) =>
+        public IDeviceUseStatementResource DeviceUseStatements(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DeviceUseStatements);
 
-        public IDiagnosticReportOperation DiagnosticReports(string providerName) =>
+        public IDiagnosticReportResource DiagnosticReports(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DiagnosticReports);
 
-        public IDocumentManifestOperation DocumentManifests(string providerName) =>
+        public IDocumentManifestResource DocumentManifests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DocumentManifests);
 
-        public IDocumentReferenceOperation DocumentReferences(string providerName) =>
+        public IDocumentReferenceResource DocumentReferences(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).DocumentReferences);
 
-        public IEffectEvidenceSynthesisOperation EffectEvidenceSyntheses(string providerName) =>
+        public IEffectEvidenceSynthesisResource EffectEvidenceSyntheses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).EffectEvidenceSyntheses);
 
-        public IEncounterOperation Encounters(string providerName) =>
+        public IEncounterResource Encounters(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Encounters);
 
-        public IEndpointOperation Endpoints(string providerName) =>
+        public IEndpointResource Endpoints(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Endpoints);
 
-        public IEnrollmentRequestOperation EnrollmentRequests(string providerName) =>
+        public IEnrollmentRequestResource EnrollmentRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).EnrollmentRequests);
 
-        public IEnrollmentResponseOperation EnrollmentResponses(string providerName) =>
+        public IEnrollmentResponseResource EnrollmentResponses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).EnrollmentResponses);
 
-        public IEpisodeOfCareOperation EpisodesOfCare(string providerName) =>
+        public IEpisodeOfCareResource EpisodesOfCare(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).EpisodesOfCare);
 
-        public IEventDefinitionOperation EventDefinitions(string providerName) =>
+        public IEventDefinitionResource EventDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).EventDefinitions);
 
-        public IEvidenceOperation Evidences(string providerName) =>
+        public IEvidenceResource Evidences(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Evidences);
 
-        public IEvidenceVariableOperation EvidenceVariables(string providerName) =>
+        public IEvidenceVariableResource EvidenceVariables(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).EvidenceVariables);
 
-        public IExampleScenarioOperation ExampleScenarios(string providerName) =>
+        public IExampleScenarioResource ExampleScenarios(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ExampleScenarios);
 
-        public IExplanationOfBenefitOperation ExplanationsOfBenefit(string providerName) =>
+        public IExplanationOfBenefitResource ExplanationsOfBenefit(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ExplanationsOfBenefit);
 
-        public IFamilyMemberHistoryOperation FamilyMemberHistories(string providerName) =>
+        public IFamilyMemberHistoryResource FamilyMemberHistories(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).FamilyMemberHistories);
 
-        public IFlagOperation Flags(string providerName) =>
+        public IFlagResource Flags(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Flags);
 
-        public IGoalOperation Goals(string providerName) =>
+        public IGoalResource Goals(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Goals);
 
-        public IGraphDefinitionOperation GraphDefinitions(string providerName) =>
+        public IGraphDefinitionResource GraphDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).GraphDefinitions);
 
-        public IGroupOperation Groups(string providerName) =>
+        public IGroupResource Groups(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Groups);
 
-        public IGuidanceResponseOperation GuidanceResponses(string providerName) =>
+        public IGuidanceResponseResource GuidanceResponses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).GuidanceResponses);
 
-        public IHealthcareServiceOperation HealthcareServices(string providerName) =>
+        public IHealthcareServiceResource HealthcareServices(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).HealthcareServices);
 
-        public IImagingStudyOperation ImagingStudies(string providerName) =>
+        public IImagingStudyResource ImagingStudies(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ImagingStudies);
 
-        public IImmunizationEvaluationOperation ImmunizationEvaluations(string providerName) =>
+        public IImmunizationEvaluationResource ImmunizationEvaluations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ImmunizationEvaluations);
 
-        public IImmunizationRecommendationOperation ImmunizationRecommendations(string providerName) =>
+        public IImmunizationRecommendationResource ImmunizationRecommendations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ImmunizationRecommendations);
 
-        public IImmunizationOperation Immunizations(string providerName) =>
+        public IImmunizationResource Immunizations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Immunizations);
 
-        public IImplementationGuideOperation ImplementationGuides(string providerName) =>
+        public IImplementationGuideResource ImplementationGuides(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ImplementationGuides);
 
-        public IInsurancePlanOperation InsurancePlans(string providerName) =>
+        public IInsurancePlanResource InsurancePlans(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).InsurancePlans);
 
-        public IInvoiceOperation Invoices(string providerName) =>
+        public IInvoiceResource Invoices(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Invoices);
 
-        public ILibraryOperation Libraries(string providerName) =>
+        public ILibraryResource Libraries(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Libraries);
 
-        public ILinkageOperation Linkages(string providerName) =>
+        public ILinkageResource Linkages(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Linkages);
 
-        public IListOperation Lists(string providerName) =>
+        public IListResource Lists(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Lists);
 
-        public ILocationOperation Locations(string providerName) =>
+        public ILocationResource Locations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Locations);
 
-        public IMeasureReportOperation MeasureReports(string providerName) =>
+        public IMeasureReportResource MeasureReports(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MeasureReports);
 
-        public IMeasureOperation Measures(string providerName) =>
+        public IMeasureResource Measures(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Measures);
 
-        public IMediaOperation Media(string providerName) =>
+        public IMediaResource Media(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Media);
 
-        public IMedicationAdministrationOperation MedicationAdministrations(string providerName) =>
+        public IMedicationAdministrationResource MedicationAdministrations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicationAdministrations);
 
-        public IMedicationDispenseOperation MedicationDispenses(string providerName) =>
+        public IMedicationDispenseResource MedicationDispenses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicationDispenses);
 
-        public IMedicationKnowledgeOperation MedicationKnowledge(string providerName) =>
+        public IMedicationKnowledgeResource MedicationKnowledge(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicationKnowledge);
 
-        public IMedicationRequestOperation MedicationRequests(string providerName) =>
+        public IMedicationRequestResource MedicationRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicationRequests);
 
-        public IMedicationOperation Medications(string providerName) =>
+        public IMedicationResource Medications(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Medications);
 
-        public IMedicationStatementOperation MedicationStatements(string providerName) =>
+        public IMedicationStatementResource MedicationStatements(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicationStatements);
 
-        public IMedicinalProductAuthorizationOperation MedicinalProductAuthorizations(string providerName) =>
+        public IMedicinalProductAuthorizationResource MedicinalProductAuthorizations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductAuthorizations);
 
-        public IMedicinalProductContraindicationOperation MedicinalProductContraindications(string providerName) =>
+        public IMedicinalProductContraindicationResource MedicinalProductContraindications(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductContraindications);
 
-        public IMedicinalProductIndicationOperation MedicinalProductIndications(string providerName) =>
+        public IMedicinalProductIndicationResource MedicinalProductIndications(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductIndications);
 
-        public IMedicinalProductIngredientOperation MedicinalProductIngredients(string providerName) =>
+        public IMedicinalProductIngredientResource MedicinalProductIngredients(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductIngredients);
 
-        public IMedicinalProductInteractionOperation MedicinalProductInteractions(string providerName) =>
+        public IMedicinalProductInteractionResource MedicinalProductInteractions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductInteractions);
 
-        public IMedicinalProductManufacturedOperation MedicinalProductManufactureds(string providerName) =>
+        public IMedicinalProductManufacturedResource MedicinalProductManufactureds(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductManufactureds);
 
-        public IMedicinalProductPackagedOperation MedicinalProductPackageds(string providerName) =>
+        public IMedicinalProductPackagedResource MedicinalProductPackageds(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductPackageds);
 
-        public IMedicinalProductPharmaceuticalOperation MedicinalProductPharmaceuticals(string providerName) =>
+        public IMedicinalProductPharmaceuticalResource MedicinalProductPharmaceuticals(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductPharmaceuticals);
 
-        public IMedicinalProductOperation MedicinalProducts(string providerName) =>
+        public IMedicinalProductResource MedicinalProducts(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProducts);
 
-        public IMedicinalProductUndesirableEffectOperation MedicinalProductUndesirableEffects(string providerName) =>
+        public IMedicinalProductUndesirableEffectResource MedicinalProductUndesirableEffects(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MedicinalProductUndesirableEffects);
 
-        public IMessageDefinitionOperation MessageDefinitions(string providerName) =>
+        public IMessageDefinitionResource MessageDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MessageDefinitions);
 
-        public IMessageHeaderOperation MessageHeaders(string providerName) =>
+        public IMessageHeaderResource MessageHeaders(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MessageHeaders);
 
-        public IMolecularSequenceOperation MolecularSequences(string providerName) =>
+        public IMolecularSequenceResource MolecularSequences(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).MolecularSequences);
 
-        public INamingSystemOperation NamingSystems(string providerName) =>
+        public INamingSystemResource NamingSystems(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).NamingSystems);
 
-        public INutritionOrderOperation NutritionOrders(string providerName) =>
+        public INutritionOrderResource NutritionOrders(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).NutritionOrders);
 
-        public IObservationDefinitionOperation ObservationDefinitions(string providerName) =>
+        public IObservationDefinitionResource ObservationDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ObservationDefinitions);
 
-        public IObservationOperation Observations(string providerName) =>
+        public IObservationResource Observations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Observations);
 
-        public IOperationDefinitionOperation OperationDefinitions(string providerName) =>
+        public IOperationDefinitionResource OperationDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).OperationDefinitions);
 
-        public IOperationOutcomeOperation OperationOutcomes(string providerName) =>
+        public IOperationOutcomeResource OperationOutcomes(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).OperationOutcomes);
 
-        public IOrganizationAffiliationOperation OrganizationAffiliations(string providerName) =>
+        public IOrganizationAffiliationResource OrganizationAffiliations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).OrganizationAffiliations);
 
-        public IOrganizationOperation Organizations(string providerName) =>
+        public IOrganizationResource Organizations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Organizations);
 
-        public IParametersOperation Parameters(string providerName) =>
+        public IParametersResource Parameters(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Parameters);
 
-        public IPatientOperation Patients(string providerName) =>
+        public IPatientResource Patients(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Patients);
 
-        public IPaymentNoticeOperation PaymentNotices(string providerName) =>
+        public IPaymentNoticeResource PaymentNotices(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).PaymentNotices);
 
-        public IPaymentReconciliationOperation PaymentReconciliations(string providerName) =>
+        public IPaymentReconciliationResource PaymentReconciliations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).PaymentReconciliations);
 
-        public IPersonOperation Persons(string providerName) =>
+        public IPersonResource Persons(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Persons);
 
-        public IPlanDefinitionOperation PlanDefinitions(string providerName) =>
+        public IPlanDefinitionResource PlanDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).PlanDefinitions);
 
-        public IPractitionerRoleOperation PractitionerRoles(string providerName) =>
+        public IPractitionerRoleResource PractitionerRoles(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).PractitionerRoles);
 
-        public IPractitionerOperation Practitioners(string providerName) =>
+        public IPractitionerResource Practitioners(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Practitioners);
 
-        public IProcedureOperation Procedures(string providerName) =>
+        public IProcedureResource Procedures(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Procedures);
 
-        public IProvenanceOperation Provenances(string providerName) =>
+        public IProvenanceResource Provenances(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Provenances);
 
-        public IQuestionnaireResponseOperation QuestionnaireResponses(string providerName) =>
+        public IQuestionnaireResponseResource QuestionnaireResponses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).QuestionnaireResponses);
 
-        public IQuestionnaireOperation Questionnaires(string providerName) =>
+        public IQuestionnaireResource Questionnaires(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Questionnaires);
 
-        public IRelatedPersonOperation RelatedPersons(string providerName) =>
+        public IRelatedPersonResource RelatedPersons(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).RelatedPersons);
 
-        public IRequestGroupOperation RequestGroups(string providerName) =>
+        public IRequestGroupResource RequestGroups(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).RequestGroups);
 
-        public IResearchDefinitionOperation ResearchDefinitions(string providerName) =>
+        public IResearchDefinitionResource ResearchDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ResearchDefinitions);
 
-        public IResearchElementDefinitionOperation ResearchElementDefinitions(string providerName) =>
+        public IResearchElementDefinitionResource ResearchElementDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ResearchElementDefinitions);
 
-        public IResearchStudyOperation ResearchStudies(string providerName) =>
+        public IResearchStudyResource ResearchStudies(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ResearchStudies);
 
-        public IResearchSubjectOperation ResearchSubjects(string providerName) =>
+        public IResearchSubjectResource ResearchSubjects(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ResearchSubjects);
 
-        public IRiskAssessmentOperation RiskAssessments(string providerName) =>
+        public IRiskAssessmentResource RiskAssessments(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).RiskAssessments);
 
-        public IRiskEvidenceSynthesisOperation RiskEvidenceSyntheses(string providerName) =>
+        public IRiskEvidenceSynthesisResource RiskEvidenceSyntheses(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).RiskEvidenceSyntheses);
 
-        public IScheduleOperation Schedules(string providerName) =>
+        public IScheduleResource Schedules(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Schedules);
 
-        public ISearchParameterOperation SearchParameters(string providerName) =>
+        public ISearchParameterResource SearchParameters(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SearchParameters);
 
-        public IServiceRequestOperation ServiceRequests(string providerName) =>
+        public IServiceRequestResource ServiceRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ServiceRequests);
 
-        public ISlotOperation Slots(string providerName) =>
+        public ISlotResource Slots(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Slots);
 
-        public ISpecimenDefinitionOperation SpecimenDefinitions(string providerName) =>
+        public ISpecimenDefinitionResource SpecimenDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SpecimenDefinitions);
 
-        public ISpecimenOperation Specimens(string providerName) =>
+        public ISpecimenResource Specimens(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Specimens);
 
-        public IStructureDefinitionOperation StructureDefinitions(string providerName) =>
+        public IStructureDefinitionResource StructureDefinitions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).StructureDefinitions);
 
-        public IStructureMapOperation StructureMaps(string providerName) =>
+        public IStructureMapResource StructureMaps(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).StructureMaps);
 
-        public ISubscriptionOperation Subscriptions(string providerName) =>
+        public ISubscriptionResource Subscriptions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Subscriptions);
 
-        public ISubstanceNucleicAcidOperation SubstanceNucleicAcids(string providerName) =>
+        public ISubstanceNucleicAcidResource SubstanceNucleicAcids(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SubstanceNucleicAcids);
 
-        public ISubstancePolymerOperation SubstancePolymers(string providerName) =>
+        public ISubstancePolymerResource SubstancePolymers(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SubstancePolymers);
 
-        public ISubstanceProteinOperation SubstanceProteins(string providerName) =>
+        public ISubstanceProteinResource SubstanceProteins(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SubstanceProteins);
 
-        public ISubstanceReferenceInformationOperation SubstanceReferenceInformations(string providerName) =>
+        public ISubstanceReferenceInformationResource SubstanceReferenceInformations(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SubstanceReferenceInformations);
 
-        public ISubstanceOperation Substances(string providerName) =>
+        public ISubstanceResource Substances(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Substances);
 
-        public ISubstanceSourceMaterialOperation SubstanceSourceMaterials(string providerName) =>
+        public ISubstanceSourceMaterialResource SubstanceSourceMaterials(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SubstanceSourceMaterials);
 
-        public ISubstanceSpecificationOperation SubstanceSpecifications(string providerName) =>
+        public ISubstanceSpecificationResource SubstanceSpecifications(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SubstanceSpecifications);
 
-        public ISupplyDeliveryOperation SupplyDeliveries(string providerName) =>
+        public ISupplyDeliveryResource SupplyDeliveries(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SupplyDeliveries);
 
-        public ISupplyRequestOperation SupplyRequests(string providerName) =>
+        public ISupplyRequestResource SupplyRequests(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).SupplyRequests);
 
-        public ITaskOperation Tasks(string providerName) =>
+        public ITaskResource Tasks(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Tasks);
 
-        public ITerminologyCapabilitiesOperation TerminologyCapabilities(string providerName) =>
+        public ITerminologyCapabilitiesResource TerminologyCapabilities(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).TerminologyCapabilities);
 
-        public ITestReportOperation TestReports(string providerName) =>
+        public ITestReportResource TestReports(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).TestReports);
 
-        public ITestScriptOperation TestScripts(string providerName) =>
+        public ITestScriptResource TestScripts(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).TestScripts);
 
-        public IValueSetOperation ValueSets(string providerName) =>
+        public IValueSetResource ValueSets(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).ValueSets);
 
-        public IVerificationResultOperation VerificationResults(string providerName) =>
+        public IVerificationResultResource VerificationResults(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).VerificationResults);
 
-        public IVisionPrescriptionOperation VisionPrescriptions(string providerName) =>
+        public IVisionPrescriptionResource VisionPrescriptions(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).VisionPrescriptions);
     }
 }

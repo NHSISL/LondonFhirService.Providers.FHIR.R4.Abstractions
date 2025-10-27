@@ -3,7 +3,7 @@
 // ---------------------------------------------------------
 
 using System;
-using LondonFhirService.Providers.FHIR.R4.Abstractions.Operations;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
 {
@@ -11,296 +11,296 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
     {
         public string ProviderName { get; set; }
 
-        public IAccountOperation Accounts => throw new NotImplementedException();
+        public IAccountResource Accounts => throw new NotImplementedException();
 
-        public IActivityDefinitionOperation ActivityDefinitions => throw new NotImplementedException();
+        public IActivityDefinitionResource ActivityDefinitions => throw new NotImplementedException();
 
-        public IAdverseEventOperation AdverseEvents => throw new NotImplementedException();
+        public IAdverseEventResource AdverseEvents => throw new NotImplementedException();
 
-        public IAllergyIntoleranceOperation AllergyIntolerances => throw new NotImplementedException();
+        public IAllergyIntoleranceResource AllergyIntolerances => throw new NotImplementedException();
 
-        public IAppointmentOperation Appointments => throw new NotImplementedException();
+        public IAppointmentResource Appointments => throw new NotImplementedException();
 
-        public IAppointmentResponseOperation AppointmentResponses => throw new NotImplementedException();
+        public IAppointmentResponseResource AppointmentResponses => throw new NotImplementedException();
 
-        public IAuditEventOperation AuditEvents => throw new NotImplementedException();
+        public IAuditEventResource AuditEvents => throw new NotImplementedException();
 
-        public IBasicOperation Basics => throw new NotImplementedException();
+        public IBasicResource Basics => throw new NotImplementedException();
 
-        public IBinaryOperation Binaries => throw new NotImplementedException();
+        public IBinaryResource Binaries => throw new NotImplementedException();
 
-        public IBiologicallyDerivedProductOperation BiologicallyDerivedProducts => throw new NotImplementedException();
+        public IBiologicallyDerivedProductResource BiologicallyDerivedProducts => throw new NotImplementedException();
 
-        public IBodyStructureOperation BodyStructures => throw new NotImplementedException();
+        public IBodyStructureResource BodyStructures => throw new NotImplementedException();
 
-        public IBundleOperation Bundles => throw new NotImplementedException();
+        public IBundleResource Bundles => throw new NotImplementedException();
 
-        public ICapabilityStatementOperation CapabilityStatements => throw new NotImplementedException();
+        public ICapabilityStatementResource CapabilityStatements => throw new NotImplementedException();
 
-        public ICarePlanOperation CarePlans => throw new NotImplementedException();
+        public ICarePlanResource CarePlans => throw new NotImplementedException();
 
-        public ICareTeamOperation CareTeams => throw new NotImplementedException();
+        public ICareTeamResource CareTeams => throw new NotImplementedException();
 
-        public ICatalogEntryOperation CatalogEntries => throw new NotImplementedException();
+        public ICatalogEntryResource CatalogEntries => throw new NotImplementedException();
 
-        public IChargeItemOperation ChargeItems => throw new NotImplementedException();
+        public IChargeItemResource ChargeItems => throw new NotImplementedException();
 
-        public IChargeItemDefinitionOperation ChargeItemDefinitions => throw new NotImplementedException();
+        public IChargeItemDefinitionResource ChargeItemDefinitions => throw new NotImplementedException();
 
-        public IClaimOperation Claims => throw new NotImplementedException();
+        public IClaimResource Claims => throw new NotImplementedException();
 
-        public IClaimResponseOperation ClaimResponses => throw new NotImplementedException();
+        public IClaimResponseResource ClaimResponses => throw new NotImplementedException();
 
-        public IClinicalImpressionOperation ClinicalImpressions => throw new NotImplementedException();
+        public IClinicalImpressionResource ClinicalImpressions => throw new NotImplementedException();
 
-        public ICodeSystemOperation CodeSystems => throw new NotImplementedException();
+        public ICodeSystemResource CodeSystems => throw new NotImplementedException();
 
-        public ICommunicationOperation Communications => throw new NotImplementedException();
+        public ICommunicationResource Communications => throw new NotImplementedException();
 
-        public ICommunicationRequestOperation CommunicationRequests => throw new NotImplementedException();
+        public ICommunicationRequestResource CommunicationRequests => throw new NotImplementedException();
 
-        public ICompartmentDefinitionOperation CompartmentDefinitions => throw new NotImplementedException();
+        public ICompartmentDefinitionResource CompartmentDefinitions => throw new NotImplementedException();
 
-        public ICompositionOperation Compositions => throw new NotImplementedException();
+        public ICompositionResource Compositions => throw new NotImplementedException();
 
-        public IConceptMapOperation ConceptMaps => throw new NotImplementedException();
+        public IConceptMapResource ConceptMaps => throw new NotImplementedException();
 
-        public IConditionOperation Conditions => throw new NotImplementedException();
+        public IConditionResource Conditions => throw new NotImplementedException();
 
-        public IConsentOperation Consents => throw new NotImplementedException();
+        public IConsentResource Consents => throw new NotImplementedException();
 
-        public IContractOperation Contracts => throw new NotImplementedException();
+        public IContractResource Contracts => throw new NotImplementedException();
 
-        public ICoverageOperation Coverages => throw new NotImplementedException();
+        public ICoverageResource Coverages => throw new NotImplementedException();
 
-        public ICoverageEligibilityRequestOperation CoverageEligibilityRequests => throw new NotImplementedException();
+        public ICoverageEligibilityRequestResource CoverageEligibilityRequests => throw new NotImplementedException();
 
-        public ICoverageEligibilityResponseOperation CoverageEligibilityResponses => throw new NotImplementedException();
+        public ICoverageEligibilityResponseResource CoverageEligibilityResponses => throw new NotImplementedException();
 
-        public IDetectedIssueOperation DetectedIssues => throw new NotImplementedException();
+        public IDetectedIssueResource DetectedIssues => throw new NotImplementedException();
 
-        public IDeviceOperation Devices => throw new NotImplementedException();
+        public IDeviceResource Devices => throw new NotImplementedException();
 
-        public IDeviceDefinitionOperation DeviceDefinitions => throw new NotImplementedException();
+        public IDeviceDefinitionResource DeviceDefinitions => throw new NotImplementedException();
 
-        public IDeviceMetricOperation DeviceMetrics => throw new NotImplementedException();
+        public IDeviceMetricResource DeviceMetrics => throw new NotImplementedException();
 
-        public IDeviceRequestOperation DeviceRequests => throw new NotImplementedException();
+        public IDeviceRequestResource DeviceRequests => throw new NotImplementedException();
 
-        public IDeviceUseStatementOperation DeviceUseStatements => throw new NotImplementedException();
+        public IDeviceUseStatementResource DeviceUseStatements => throw new NotImplementedException();
 
-        public IDiagnosticReportOperation DiagnosticReports => throw new NotImplementedException();
+        public IDiagnosticReportResource DiagnosticReports => throw new NotImplementedException();
 
-        public IDocumentManifestOperation DocumentManifests => throw new NotImplementedException();
+        public IDocumentManifestResource DocumentManifests => throw new NotImplementedException();
 
-        public IDocumentReferenceOperation DocumentReferences => throw new NotImplementedException();
+        public IDocumentReferenceResource DocumentReferences => throw new NotImplementedException();
 
-        public IEffectEvidenceSynthesisOperation EffectEvidenceSyntheses => throw new NotImplementedException();
+        public IEffectEvidenceSynthesisResource EffectEvidenceSyntheses => throw new NotImplementedException();
 
-        public IEncounterOperation Encounters => throw new NotImplementedException();
+        public IEncounterResource Encounters => throw new NotImplementedException();
 
-        public IEndpointOperation Endpoints => throw new NotImplementedException();
+        public IEndpointResource Endpoints => throw new NotImplementedException();
 
-        public IEnrollmentRequestOperation EnrollmentRequests => throw new NotImplementedException();
+        public IEnrollmentRequestResource EnrollmentRequests => throw new NotImplementedException();
 
-        public IEnrollmentResponseOperation EnrollmentResponses => throw new NotImplementedException();
+        public IEnrollmentResponseResource EnrollmentResponses => throw new NotImplementedException();
 
-        public IEpisodeOfCareOperation EpisodesOfCare => throw new NotImplementedException();
+        public IEpisodeOfCareResource EpisodesOfCare => throw new NotImplementedException();
 
-        public IEventDefinitionOperation EventDefinitions => throw new NotImplementedException();
+        public IEventDefinitionResource EventDefinitions => throw new NotImplementedException();
 
-        public IEvidenceOperation Evidences => throw new NotImplementedException();
+        public IEvidenceResource Evidences => throw new NotImplementedException();
 
-        public IEvidenceVariableOperation EvidenceVariables => throw new NotImplementedException();
+        public IEvidenceVariableResource EvidenceVariables => throw new NotImplementedException();
 
-        public IExampleScenarioOperation ExampleScenarios => throw new NotImplementedException();
+        public IExampleScenarioResource ExampleScenarios => throw new NotImplementedException();
 
-        public IExplanationOfBenefitOperation ExplanationsOfBenefit => throw new NotImplementedException();
+        public IExplanationOfBenefitResource ExplanationsOfBenefit => throw new NotImplementedException();
 
-        public IFamilyMemberHistoryOperation FamilyMemberHistories => throw new NotImplementedException();
+        public IFamilyMemberHistoryResource FamilyMemberHistories => throw new NotImplementedException();
 
-        public IFlagOperation Flags => throw new NotImplementedException();
+        public IFlagResource Flags => throw new NotImplementedException();
 
-        public IGoalOperation Goals => throw new NotImplementedException();
+        public IGoalResource Goals => throw new NotImplementedException();
 
-        public IGraphDefinitionOperation GraphDefinitions => throw new NotImplementedException();
+        public IGraphDefinitionResource GraphDefinitions => throw new NotImplementedException();
 
-        public IGroupOperation Groups => throw new NotImplementedException();
+        public IGroupResource Groups => throw new NotImplementedException();
 
-        public IGuidanceResponseOperation GuidanceResponses => throw new NotImplementedException();
+        public IGuidanceResponseResource GuidanceResponses => throw new NotImplementedException();
 
-        public IHealthcareServiceOperation HealthcareServices => throw new NotImplementedException();
+        public IHealthcareServiceResource HealthcareServices => throw new NotImplementedException();
 
-        public IImagingStudyOperation ImagingStudies => throw new NotImplementedException();
+        public IImagingStudyResource ImagingStudies => throw new NotImplementedException();
 
-        public IImmunizationOperation Immunizations => throw new NotImplementedException();
+        public IImmunizationResource Immunizations => throw new NotImplementedException();
 
-        public IImmunizationEvaluationOperation ImmunizationEvaluations => throw new NotImplementedException();
+        public IImmunizationEvaluationResource ImmunizationEvaluations => throw new NotImplementedException();
 
-        public IImmunizationRecommendationOperation ImmunizationRecommendations => throw new NotImplementedException();
+        public IImmunizationRecommendationResource ImmunizationRecommendations => throw new NotImplementedException();
 
-        public IImplementationGuideOperation ImplementationGuides => throw new NotImplementedException();
+        public IImplementationGuideResource ImplementationGuides => throw new NotImplementedException();
 
-        public IInsurancePlanOperation InsurancePlans => throw new NotImplementedException();
+        public IInsurancePlanResource InsurancePlans => throw new NotImplementedException();
 
-        public IInvoiceOperation Invoices => throw new NotImplementedException();
+        public IInvoiceResource Invoices => throw new NotImplementedException();
 
-        public ILibraryOperation Libraries => throw new NotImplementedException();
+        public ILibraryResource Libraries => throw new NotImplementedException();
 
-        public ILinkageOperation Linkages => throw new NotImplementedException();
+        public ILinkageResource Linkages => throw new NotImplementedException();
 
-        public IListOperation Lists => throw new NotImplementedException();
+        public IListResource Lists => throw new NotImplementedException();
 
-        public ILocationOperation Locations => throw new NotImplementedException();
+        public ILocationResource Locations => throw new NotImplementedException();
 
-        public IMeasureOperation Measures => throw new NotImplementedException();
+        public IMeasureResource Measures => throw new NotImplementedException();
 
-        public IMeasureReportOperation MeasureReports => throw new NotImplementedException();
+        public IMeasureReportResource MeasureReports => throw new NotImplementedException();
 
-        public IMediaOperation Media => throw new NotImplementedException();
+        public IMediaResource Media => throw new NotImplementedException();
 
-        public IMedicationOperation Medications => throw new NotImplementedException();
+        public IMedicationResource Medications => throw new NotImplementedException();
 
-        public IMedicationAdministrationOperation MedicationAdministrations => throw new NotImplementedException();
+        public IMedicationAdministrationResource MedicationAdministrations => throw new NotImplementedException();
 
-        public IMedicationDispenseOperation MedicationDispenses => throw new NotImplementedException();
+        public IMedicationDispenseResource MedicationDispenses => throw new NotImplementedException();
 
-        public IMedicationKnowledgeOperation MedicationKnowledge => throw new NotImplementedException();
+        public IMedicationKnowledgeResource MedicationKnowledge => throw new NotImplementedException();
 
-        public IMedicationRequestOperation MedicationRequests => throw new NotImplementedException();
+        public IMedicationRequestResource MedicationRequests => throw new NotImplementedException();
 
-        public IMedicationStatementOperation MedicationStatements => throw new NotImplementedException();
+        public IMedicationStatementResource MedicationStatements => throw new NotImplementedException();
 
-        public IMedicinalProductOperation MedicinalProducts => throw new NotImplementedException();
+        public IMedicinalProductResource MedicinalProducts => throw new NotImplementedException();
 
-        public IMedicinalProductAuthorizationOperation MedicinalProductAuthorizations => throw new NotImplementedException();
+        public IMedicinalProductAuthorizationResource MedicinalProductAuthorizations => throw new NotImplementedException();
 
-        public IMedicinalProductContraindicationOperation MedicinalProductContraindications => throw new NotImplementedException();
+        public IMedicinalProductContraindicationResource MedicinalProductContraindications => throw new NotImplementedException();
 
-        public IMedicinalProductIndicationOperation MedicinalProductIndications => throw new NotImplementedException();
+        public IMedicinalProductIndicationResource MedicinalProductIndications => throw new NotImplementedException();
 
-        public IMedicinalProductIngredientOperation MedicinalProductIngredients => throw new NotImplementedException();
+        public IMedicinalProductIngredientResource MedicinalProductIngredients => throw new NotImplementedException();
 
-        public IMedicinalProductInteractionOperation MedicinalProductInteractions => throw new NotImplementedException();
+        public IMedicinalProductInteractionResource MedicinalProductInteractions => throw new NotImplementedException();
 
-        public IMedicinalProductManufacturedOperation MedicinalProductManufactureds => throw new NotImplementedException();
+        public IMedicinalProductManufacturedResource MedicinalProductManufactureds => throw new NotImplementedException();
 
-        public IMedicinalProductPackagedOperation MedicinalProductPackageds => throw new NotImplementedException();
+        public IMedicinalProductPackagedResource MedicinalProductPackageds => throw new NotImplementedException();
 
-        public IMedicinalProductPharmaceuticalOperation MedicinalProductPharmaceuticals => throw new NotImplementedException();
+        public IMedicinalProductPharmaceuticalResource MedicinalProductPharmaceuticals => throw new NotImplementedException();
 
-        public IMedicinalProductUndesirableEffectOperation MedicinalProductUndesirableEffects => throw new NotImplementedException();
+        public IMedicinalProductUndesirableEffectResource MedicinalProductUndesirableEffects => throw new NotImplementedException();
 
-        public IMessageDefinitionOperation MessageDefinitions => throw new NotImplementedException();
+        public IMessageDefinitionResource MessageDefinitions => throw new NotImplementedException();
 
-        public IMessageHeaderOperation MessageHeaders => throw new NotImplementedException();
+        public IMessageHeaderResource MessageHeaders => throw new NotImplementedException();
 
-        public IMolecularSequenceOperation MolecularSequences => throw new NotImplementedException();
+        public IMolecularSequenceResource MolecularSequences => throw new NotImplementedException();
 
-        public INamingSystemOperation NamingSystems => throw new NotImplementedException();
+        public INamingSystemResource NamingSystems => throw new NotImplementedException();
 
-        public INutritionOrderOperation NutritionOrders => throw new NotImplementedException();
+        public INutritionOrderResource NutritionOrders => throw new NotImplementedException();
 
-        public IObservationOperation Observations => throw new NotImplementedException();
+        public IObservationResource Observations => throw new NotImplementedException();
 
-        public IObservationDefinitionOperation ObservationDefinitions => throw new NotImplementedException();
+        public IObservationDefinitionResource ObservationDefinitions => throw new NotImplementedException();
 
-        public IOperationDefinitionOperation OperationDefinitions => throw new NotImplementedException();
+        public IOperationDefinitionResource OperationDefinitions => throw new NotImplementedException();
 
-        public IOperationOutcomeOperation OperationOutcomes => throw new NotImplementedException();
+        public IOperationOutcomeResource OperationOutcomes => throw new NotImplementedException();
 
-        public IOrganizationOperation Organizations => throw new NotImplementedException();
+        public IOrganizationResource Organizations => throw new NotImplementedException();
 
-        public IOrganizationAffiliationOperation OrganizationAffiliations => throw new NotImplementedException();
+        public IOrganizationAffiliationResource OrganizationAffiliations => throw new NotImplementedException();
 
-        public IParametersOperation Parameters => throw new NotImplementedException();
+        public IParametersResource Parameters => throw new NotImplementedException();
 
-        public IPatientOperation Patients => throw new NotImplementedException();
+        public IPatientResource Patients => throw new NotImplementedException();
 
-        public IPaymentNoticeOperation PaymentNotices => throw new NotImplementedException();
+        public IPaymentNoticeResource PaymentNotices => throw new NotImplementedException();
 
-        public IPaymentReconciliationOperation PaymentReconciliations => throw new NotImplementedException();
+        public IPaymentReconciliationResource PaymentReconciliations => throw new NotImplementedException();
 
-        public IPersonOperation Persons => throw new NotImplementedException();
+        public IPersonResource Persons => throw new NotImplementedException();
 
-        public IPlanDefinitionOperation PlanDefinitions => throw new NotImplementedException();
+        public IPlanDefinitionResource PlanDefinitions => throw new NotImplementedException();
 
-        public IPractitionerOperation Practitioners => throw new NotImplementedException();
+        public IPractitionerResource Practitioners => throw new NotImplementedException();
 
-        public IPractitionerRoleOperation PractitionerRoles => throw new NotImplementedException();
+        public IPractitionerRoleResource PractitionerRoles => throw new NotImplementedException();
 
-        public IProcedureOperation Procedures => throw new NotImplementedException();
+        public IProcedureResource Procedures => throw new NotImplementedException();
 
-        public IProvenanceOperation Provenances => throw new NotImplementedException();
+        public IProvenanceResource Provenances => throw new NotImplementedException();
 
-        public IQuestionnaireOperation Questionnaires => throw new NotImplementedException();
+        public IQuestionnaireResource Questionnaires => throw new NotImplementedException();
 
-        public IQuestionnaireResponseOperation QuestionnaireResponses => throw new NotImplementedException();
+        public IQuestionnaireResponseResource QuestionnaireResponses => throw new NotImplementedException();
 
-        public IRelatedPersonOperation RelatedPersons => throw new NotImplementedException();
+        public IRelatedPersonResource RelatedPersons => throw new NotImplementedException();
 
-        public IRequestGroupOperation RequestGroups => throw new NotImplementedException();
+        public IRequestGroupResource RequestGroups => throw new NotImplementedException();
 
-        public IResearchDefinitionOperation ResearchDefinitions => throw new NotImplementedException();
+        public IResearchDefinitionResource ResearchDefinitions => throw new NotImplementedException();
 
-        public IResearchElementDefinitionOperation ResearchElementDefinitions => throw new NotImplementedException();
+        public IResearchElementDefinitionResource ResearchElementDefinitions => throw new NotImplementedException();
 
-        public IResearchStudyOperation ResearchStudies => throw new NotImplementedException();
+        public IResearchStudyResource ResearchStudies => throw new NotImplementedException();
 
-        public IResearchSubjectOperation ResearchSubjects => throw new NotImplementedException();
+        public IResearchSubjectResource ResearchSubjects => throw new NotImplementedException();
 
-        public IRiskAssessmentOperation RiskAssessments => throw new NotImplementedException();
+        public IRiskAssessmentResource RiskAssessments => throw new NotImplementedException();
 
-        public IRiskEvidenceSynthesisOperation RiskEvidenceSyntheses => throw new NotImplementedException();
+        public IRiskEvidenceSynthesisResource RiskEvidenceSyntheses => throw new NotImplementedException();
 
-        public IScheduleOperation Schedules => throw new NotImplementedException();
+        public IScheduleResource Schedules => throw new NotImplementedException();
 
-        public ISearchParameterOperation SearchParameters => throw new NotImplementedException();
+        public ISearchParameterResource SearchParameters => throw new NotImplementedException();
 
-        public IServiceRequestOperation ServiceRequests => throw new NotImplementedException();
+        public IServiceRequestResource ServiceRequests => throw new NotImplementedException();
 
-        public ISlotOperation Slots => throw new NotImplementedException();
+        public ISlotResource Slots => throw new NotImplementedException();
 
-        public ISpecimenOperation Specimens => throw new NotImplementedException();
+        public ISpecimenResource Specimens => throw new NotImplementedException();
 
-        public ISpecimenDefinitionOperation SpecimenDefinitions => throw new NotImplementedException();
+        public ISpecimenDefinitionResource SpecimenDefinitions => throw new NotImplementedException();
 
-        public IStructureDefinitionOperation StructureDefinitions => throw new NotImplementedException();
+        public IStructureDefinitionResource StructureDefinitions => throw new NotImplementedException();
 
-        public IStructureMapOperation StructureMaps => throw new NotImplementedException();
+        public IStructureMapResource StructureMaps => throw new NotImplementedException();
 
-        public ISubscriptionOperation Subscriptions => throw new NotImplementedException();
+        public ISubscriptionResource Subscriptions => throw new NotImplementedException();
 
-        public ISubstanceOperation Substances => throw new NotImplementedException();
+        public ISubstanceResource Substances => throw new NotImplementedException();
 
-        public ISubstanceNucleicAcidOperation SubstanceNucleicAcids => throw new NotImplementedException();
+        public ISubstanceNucleicAcidResource SubstanceNucleicAcids => throw new NotImplementedException();
 
-        public ISubstancePolymerOperation SubstancePolymers => throw new NotImplementedException();
+        public ISubstancePolymerResource SubstancePolymers => throw new NotImplementedException();
 
-        public ISubstanceProteinOperation SubstanceProteins => throw new NotImplementedException();
+        public ISubstanceProteinResource SubstanceProteins => throw new NotImplementedException();
 
-        public ISubstanceReferenceInformationOperation SubstanceReferenceInformations => throw new NotImplementedException();
+        public ISubstanceReferenceInformationResource SubstanceReferenceInformations => throw new NotImplementedException();
 
-        public ISubstanceSourceMaterialOperation SubstanceSourceMaterials => throw new NotImplementedException();
+        public ISubstanceSourceMaterialResource SubstanceSourceMaterials => throw new NotImplementedException();
 
-        public ISubstanceSpecificationOperation SubstanceSpecifications => throw new NotImplementedException();
+        public ISubstanceSpecificationResource SubstanceSpecifications => throw new NotImplementedException();
 
-        public ISupplyDeliveryOperation SupplyDeliveries => throw new NotImplementedException();
+        public ISupplyDeliveryResource SupplyDeliveries => throw new NotImplementedException();
 
-        public ISupplyRequestOperation SupplyRequests => throw new NotImplementedException();
+        public ISupplyRequestResource SupplyRequests => throw new NotImplementedException();
 
-        public ITaskOperation Tasks => throw new NotImplementedException();
+        public ITaskResource Tasks => throw new NotImplementedException();
 
-        public ITerminologyCapabilitiesOperation TerminologyCapabilities => throw new NotImplementedException();
+        public ITerminologyCapabilitiesResource TerminologyCapabilities => throw new NotImplementedException();
 
-        public ITestReportOperation TestReports => throw new NotImplementedException();
+        public ITestReportResource TestReports => throw new NotImplementedException();
 
-        public ITestScriptOperation TestScripts => throw new NotImplementedException();
+        public ITestScriptResource TestScripts => throw new NotImplementedException();
 
-        public IValueSetOperation ValueSets => throw new NotImplementedException();
+        public IValueSetResource ValueSets => throw new NotImplementedException();
 
-        public IVerificationResultOperation VerificationResults => throw new NotImplementedException();
+        public IVerificationResultResource VerificationResults => throw new NotImplementedException();
 
-        public IVisionPrescriptionOperation VisionPrescriptions => throw new NotImplementedException();
+        public IVisionPrescriptionResource VisionPrescriptions => throw new NotImplementedException();
     }
 }
