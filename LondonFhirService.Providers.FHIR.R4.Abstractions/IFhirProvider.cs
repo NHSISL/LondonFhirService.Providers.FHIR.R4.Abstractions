@@ -2,7 +2,7 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
-using LondonFhirService.Providers.FHIR.R4.Abstractions.Operations;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
 {
@@ -12,441 +12,441 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         string ProviderName { get; }
 
         /// <summary>Access FHIR Account resources.</summary>
-        IAccountOperation Accounts { get; }
+        IAccountResource Accounts { get; }
 
         /// <summary>Access FHIR ActivityDefinition resources.</summary>
-        IActivityDefinitionOperation ActivityDefinitions { get; }
+        IActivityDefinitionResource ActivityDefinitions { get; }
 
         /// <summary>Access FHIR AdverseEvent resources.</summary>
-        IAdverseEventOperation AdverseEvents { get; }
+        IAdverseEventResource AdverseEvents { get; }
 
         /// <summary>Access FHIR AllergyIntolerance resources.</summary>
-        IAllergyIntoleranceOperation AllergyIntolerances { get; }
+        IAllergyIntoleranceResource AllergyIntolerances { get; }
 
         /// <summary>Access FHIR Appointment resources.</summary>
-        IAppointmentOperation Appointments { get; }
+        IAppointmentResource Appointments { get; }
 
         /// <summary>Access FHIR AppointmentResponse resources.</summary>
-        IAppointmentResponseOperation AppointmentResponses { get; }
+        IAppointmentResponseResource AppointmentResponses { get; }
 
         /// <summary>Access FHIR AuditEvent resources.</summary>
-        IAuditEventOperation AuditEvents { get; }
+        IAuditEventResource AuditEvents { get; }
 
         /// <summary>Access FHIR Basic resources.</summary>
-        IBasicOperation Basics { get; }
+        IBasicResource Basics { get; }
 
         /// <summary>Access FHIR Binary resources.</summary>
-        IBinaryOperation Binaries { get; }
+        IBinaryResource Binaries { get; }
 
         /// <summary>Access FHIR BiologicallyDerivedProduct resources.</summary>
-        IBiologicallyDerivedProductOperation BiologicallyDerivedProducts { get; }
+        IBiologicallyDerivedProductResource BiologicallyDerivedProducts { get; }
 
         /// <summary>Access FHIR BodyStructure resources.</summary>
-        IBodyStructureOperation BodyStructures { get; }
+        IBodyStructureResource BodyStructures { get; }
 
         /// <summary>Access FHIR Bundle resources.</summary>
-        IBundleOperation Bundles { get; }
+        IBundleResource Bundles { get; }
 
         /// <summary>Access FHIR CapabilityStatement resources.</summary>
-        ICapabilityStatementOperation CapabilityStatements { get; }
+        ICapabilityStatementResource CapabilityStatements { get; }
 
         /// <summary>Access FHIR CarePlan resources.</summary>
-        ICarePlanOperation CarePlans { get; }
+        ICarePlanResource CarePlans { get; }
 
         /// <summary>Access FHIR CareTeam resources.</summary>
-        ICareTeamOperation CareTeams { get; }
+        ICareTeamResource CareTeams { get; }
 
         /// <summary>Access FHIR CatalogEntry resources.</summary>
-        ICatalogEntryOperation CatalogEntries { get; }
+        ICatalogEntryResource CatalogEntries { get; }
 
         /// <summary>Access FHIR ChargeItem resources.</summary>
-        IChargeItemOperation ChargeItems { get; }
+        IChargeItemResource ChargeItems { get; }
 
         /// <summary>Access FHIR ChargeItemDefinition resources.</summary>
-        IChargeItemDefinitionOperation ChargeItemDefinitions { get; }
+        IChargeItemDefinitionResource ChargeItemDefinitions { get; }
 
         /// <summary>Access FHIR Claim resources.</summary>
-        IClaimOperation Claims { get; }
+        IClaimResource Claims { get; }
 
         /// <summary>Access FHIR ClaimResponse resources.</summary>
-        IClaimResponseOperation ClaimResponses { get; }
+        IClaimResponseResource ClaimResponses { get; }
 
         /// <summary>Access FHIR ClinicalImpression resources.</summary>
-        IClinicalImpressionOperation ClinicalImpressions { get; }
+        IClinicalImpressionResource ClinicalImpressions { get; }
 
         /// <summary>Access FHIR CodeSystem resources.</summary>
-        ICodeSystemOperation CodeSystems { get; }
+        ICodeSystemResource CodeSystems { get; }
 
         /// <summary>Access FHIR Communication resources.</summary>
-        ICommunicationOperation Communications { get; }
+        ICommunicationResource Communications { get; }
 
         /// <summary>Access FHIR CommunicationRequest resources.</summary>
-        ICommunicationRequestOperation CommunicationRequests { get; }
+        ICommunicationRequestResource CommunicationRequests { get; }
 
         /// <summary>Access FHIR CompartmentDefinition resources.</summary>
-        ICompartmentDefinitionOperation CompartmentDefinitions { get; }
+        ICompartmentDefinitionResource CompartmentDefinitions { get; }
 
         /// <summary>Access FHIR Composition resources.</summary>
-        ICompositionOperation Compositions { get; }
+        ICompositionResource Compositions { get; }
 
         /// <summary>Access FHIR ConceptMap resources.</summary>
-        IConceptMapOperation ConceptMaps { get; }
+        IConceptMapResource ConceptMaps { get; }
 
         /// <summary>Access FHIR Condition resources.</summary>
-        IConditionOperation Conditions { get; }
+        IConditionResource Conditions { get; }
 
         /// <summary>Access FHIR Consent resources.</summary>
-        IConsentOperation Consents { get; }
+        IConsentResource Consents { get; }
 
         /// <summary>Access FHIR Contract resources.</summary>
-        IContractOperation Contracts { get; }
+        IContractResource Contracts { get; }
 
         /// <summary>Access FHIR Coverage resources.</summary>
-        ICoverageOperation Coverages { get; }
+        ICoverageResource Coverages { get; }
 
         /// <summary>Access FHIR CoverageEligibilityRequest resources.</summary>
-        ICoverageEligibilityRequestOperation CoverageEligibilityRequests { get; }
+        ICoverageEligibilityRequestResource CoverageEligibilityRequests { get; }
 
         /// <summary>Access FHIR CoverageEligibilityResponse resources.</summary>
-        ICoverageEligibilityResponseOperation CoverageEligibilityResponses { get; }
+        ICoverageEligibilityResponseResource CoverageEligibilityResponses { get; }
 
         /// <summary>Access FHIR DetectedIssue resources.</summary>
-        IDetectedIssueOperation DetectedIssues { get; }
+        IDetectedIssueResource DetectedIssues { get; }
 
         /// <summary>Access FHIR Device resources.</summary>
-        IDeviceOperation Devices { get; }
+        IDeviceResource Devices { get; }
 
         /// <summary>Access FHIR DeviceDefinition resources.</summary>
-        IDeviceDefinitionOperation DeviceDefinitions { get; }
+        IDeviceDefinitionResource DeviceDefinitions { get; }
 
         /// <summary>Access FHIR DeviceMetric resources.</summary>
-        IDeviceMetricOperation DeviceMetrics { get; }
+        IDeviceMetricResource DeviceMetrics { get; }
 
         /// <summary>Access FHIR DeviceRequest resources.</summary>
-        IDeviceRequestOperation DeviceRequests { get; }
+        IDeviceRequestResource DeviceRequests { get; }
 
         /// <summary>Access FHIR DeviceUseStatement resources.</summary>
-        IDeviceUseStatementOperation DeviceUseStatements { get; }
+        IDeviceUseStatementResource DeviceUseStatements { get; }
 
         /// <summary>Access FHIR DiagnosticReport resources.</summary>
-        IDiagnosticReportOperation DiagnosticReports { get; }
+        IDiagnosticReportResource DiagnosticReports { get; }
 
         /// <summary>Access FHIR DocumentManifest resources.</summary>
-        IDocumentManifestOperation DocumentManifests { get; }
+        IDocumentManifestResource DocumentManifests { get; }
 
         /// <summary>Access FHIR DocumentReference resources.</summary>
-        IDocumentReferenceOperation DocumentReferences { get; }
+        IDocumentReferenceResource DocumentReferences { get; }
 
         /// <summary>Access FHIR EffectEvidenceSynthesis resources.</summary>
-        IEffectEvidenceSynthesisOperation EffectEvidenceSyntheses { get; }
+        IEffectEvidenceSynthesisResource EffectEvidenceSyntheses { get; }
 
         /// <summary>Access FHIR Encounter resources.</summary>
-        IEncounterOperation Encounters { get; }
+        IEncounterResource Encounters { get; }
 
         /// <summary>Access FHIR Endpoint resources.</summary>
-        IEndpointOperation Endpoints { get; }
+        IEndpointResource Endpoints { get; }
 
         /// <summary>Access FHIR EnrollmentRequest resources.</summary>
-        IEnrollmentRequestOperation EnrollmentRequests { get; }
+        IEnrollmentRequestResource EnrollmentRequests { get; }
 
         /// <summary>Access FHIR EnrollmentResponse resources.</summary>
-        IEnrollmentResponseOperation EnrollmentResponses { get; }
+        IEnrollmentResponseResource EnrollmentResponses { get; }
 
         /// <summary>Access FHIR EpisodeOfCare resources.</summary>
-        IEpisodeOfCareOperation EpisodesOfCare { get; }
+        IEpisodeOfCareResource EpisodesOfCare { get; }
 
         /// <summary>Access FHIR EventDefinition resources.</summary>
-        IEventDefinitionOperation EventDefinitions { get; }
+        IEventDefinitionResource EventDefinitions { get; }
 
         /// <summary>Access FHIR Evidence resources.</summary>
-        IEvidenceOperation Evidences { get; }
+        IEvidenceResource Evidences { get; }
 
         /// <summary>Access FHIR EvidenceVariable resources.</summary>
-        IEvidenceVariableOperation EvidenceVariables { get; }
+        IEvidenceVariableResource EvidenceVariables { get; }
 
         /// <summary>Access FHIR ExampleScenario resources.</summary>
-        IExampleScenarioOperation ExampleScenarios { get; }
+        IExampleScenarioResource ExampleScenarios { get; }
 
         /// <summary>Access FHIR ExplanationOfBenefit resources.</summary>
-        IExplanationOfBenefitOperation ExplanationsOfBenefit { get; }
+        IExplanationOfBenefitResource ExplanationsOfBenefit { get; }
 
         /// <summary>Access FHIR FamilyMemberHistory resources.</summary>
-        IFamilyMemberHistoryOperation FamilyMemberHistories { get; }
+        IFamilyMemberHistoryResource FamilyMemberHistories { get; }
 
         /// <summary>Access FHIR Flag resources.</summary>
-        IFlagOperation Flags { get; }
+        IFlagResource Flags { get; }
 
         /// <summary>Access FHIR Goal resources.</summary>
-        IGoalOperation Goals { get; }
+        IGoalResource Goals { get; }
 
         /// <summary>Access FHIR GraphDefinition resources.</summary>
-        IGraphDefinitionOperation GraphDefinitions { get; }
+        IGraphDefinitionResource GraphDefinitions { get; }
 
         /// <summary>Access FHIR Group resources.</summary>
-        IGroupOperation Groups { get; }
+        IGroupResource Groups { get; }
 
         /// <summary>Access FHIR GuidanceResponse resources.</summary>
-        IGuidanceResponseOperation GuidanceResponses { get; }
+        IGuidanceResponseResource GuidanceResponses { get; }
 
         /// <summary>Access FHIR HealthcareService resources.</summary>
-        IHealthcareServiceOperation HealthcareServices { get; }
+        IHealthcareServiceResource HealthcareServices { get; }
 
         /// <summary>Access FHIR ImagingStudy resources.</summary>
-        IImagingStudyOperation ImagingStudies { get; }
+        IImagingStudyResource ImagingStudies { get; }
 
         /// <summary>Access FHIR Immunization resources.</summary>
-        IImmunizationOperation Immunizations { get; }
+        IImmunizationResource Immunizations { get; }
 
         /// <summary>Access FHIR ImmunizationEvaluation resources.</summary>
-        IImmunizationEvaluationOperation ImmunizationEvaluations { get; }
+        IImmunizationEvaluationResource ImmunizationEvaluations { get; }
 
         /// <summary>Access FHIR ImmunizationRecommendation resources.</summary>
-        IImmunizationRecommendationOperation ImmunizationRecommendations { get; }
+        IImmunizationRecommendationResource ImmunizationRecommendations { get; }
 
         /// <summary>Access FHIR ImplementationGuide resources.</summary>
-        IImplementationGuideOperation ImplementationGuides { get; }
+        IImplementationGuideResource ImplementationGuides { get; }
 
         /// <summary>Access FHIR InsurancePlan resources.</summary>
-        IInsurancePlanOperation InsurancePlans { get; }
+        IInsurancePlanResource InsurancePlans { get; }
 
         /// <summary>Access FHIR Invoice resources.</summary>
-        IInvoiceOperation Invoices { get; }
+        IInvoiceResource Invoices { get; }
 
         /// <summary>Access FHIR Library resources.</summary>
-        ILibraryOperation Libraries { get; }
+        ILibraryResource Libraries { get; }
 
         /// <summary>Access FHIR Linkage resources.</summary>
-        ILinkageOperation Linkages { get; }
+        ILinkageResource Linkages { get; }
 
         /// <summary>Access FHIR List resources.</summary>
-        IListOperation Lists { get; }
+        IListResource Lists { get; }
 
         /// <summary>Access FHIR Location resources.</summary>
-        ILocationOperation Locations { get; }
+        ILocationResource Locations { get; }
 
         /// <summary>Access FHIR Measure resources.</summary>
-        IMeasureOperation Measures { get; }
+        IMeasureResource Measures { get; }
 
         /// <summary>Access FHIR MeasureReport resources.</summary>
-        IMeasureReportOperation MeasureReports { get; }
+        IMeasureReportResource MeasureReports { get; }
 
         /// <summary>Access FHIR Media resources.</summary>
-        IMediaOperation Media { get; }
+        IMediaResource Media { get; }
 
         /// <summary>Access FHIR Medication resources.</summary>
-        IMedicationOperation Medications { get; }
+        IMedicationResource Medications { get; }
 
         /// <summary>Access FHIR MedicationAdministration resources.</summary>
-        IMedicationAdministrationOperation MedicationAdministrations { get; }
+        IMedicationAdministrationResource MedicationAdministrations { get; }
 
         /// <summary>Access FHIR MedicationDispense resources.</summary>
-        IMedicationDispenseOperation MedicationDispenses { get; }
+        IMedicationDispenseResource MedicationDispenses { get; }
 
         /// <summary>Access FHIR MedicationKnowledge resources.</summary>
-        IMedicationKnowledgeOperation MedicationKnowledge { get; }
+        IMedicationKnowledgeResource MedicationKnowledge { get; }
 
         /// <summary>Access FHIR MedicationRequest resources.</summary>
-        IMedicationRequestOperation MedicationRequests { get; }
+        IMedicationRequestResource MedicationRequests { get; }
 
         /// <summary>Access FHIR MedicationStatement resources.</summary>
-        IMedicationStatementOperation MedicationStatements { get; }
+        IMedicationStatementResource MedicationStatements { get; }
 
         /// <summary>Access FHIR MedicinalProduct resources.</summary>
-        IMedicinalProductOperation MedicinalProducts { get; }
+        IMedicinalProductResource MedicinalProducts { get; }
 
         /// <summary>Access FHIR MedicinalProductAuthorization resources.</summary>
-        IMedicinalProductAuthorizationOperation MedicinalProductAuthorizations { get; }
+        IMedicinalProductAuthorizationResource MedicinalProductAuthorizations { get; }
 
         /// <summary>Access FHIR MedicinalProductContraindication resources.</summary>
-        IMedicinalProductContraindicationOperation MedicinalProductContraindications { get; }
+        IMedicinalProductContraindicationResource MedicinalProductContraindications { get; }
 
         /// <summary>Access FHIR MedicinalProductIndication resources.</summary>
-        IMedicinalProductIndicationOperation MedicinalProductIndications { get; }
+        IMedicinalProductIndicationResource MedicinalProductIndications { get; }
 
         /// <summary>Access FHIR MedicinalProductIngredient resources.</summary>
-        IMedicinalProductIngredientOperation MedicinalProductIngredients { get; }
+        IMedicinalProductIngredientResource MedicinalProductIngredients { get; }
 
         /// <summary>Access FHIR MedicinalProductInteraction resources.</summary>
-        IMedicinalProductInteractionOperation MedicinalProductInteractions { get; }
+        IMedicinalProductInteractionResource MedicinalProductInteractions { get; }
 
         /// <summary>Access FHIR MedicinalProductManufactured resources.</summary>
-        IMedicinalProductManufacturedOperation MedicinalProductManufactureds { get; }
+        IMedicinalProductManufacturedResource MedicinalProductManufactureds { get; }
 
         /// <summary>Access FHIR MedicinalProductPackaged resources.</summary>
-        IMedicinalProductPackagedOperation MedicinalProductPackageds { get; }
+        IMedicinalProductPackagedResource MedicinalProductPackageds { get; }
 
         /// <summary>Access FHIR MedicinalProductPharmaceutical resources.</summary>
-        IMedicinalProductPharmaceuticalOperation MedicinalProductPharmaceuticals { get; }
+        IMedicinalProductPharmaceuticalResource MedicinalProductPharmaceuticals { get; }
 
         /// <summary>Access FHIR MedicinalProductUndesirableEffect resources.</summary>
-        IMedicinalProductUndesirableEffectOperation MedicinalProductUndesirableEffects { get; }
+        IMedicinalProductUndesirableEffectResource MedicinalProductUndesirableEffects { get; }
 
         /// <summary>Access FHIR MessageDefinition resources.</summary>
-        IMessageDefinitionOperation MessageDefinitions { get; }
+        IMessageDefinitionResource MessageDefinitions { get; }
 
         /// <summary>Access FHIR MessageHeader resources.</summary>
-        IMessageHeaderOperation MessageHeaders { get; }
+        IMessageHeaderResource MessageHeaders { get; }
 
         /// <summary>Access FHIR MolecularSequence resources.</summary>
-        IMolecularSequenceOperation MolecularSequences { get; }
+        IMolecularSequenceResource MolecularSequences { get; }
 
         /// <summary>Access FHIR NamingSystem resources.</summary>
-        INamingSystemOperation NamingSystems { get; }
+        INamingSystemResource NamingSystems { get; }
 
         /// <summary>Access FHIR NutritionOrder resources.</summary>
-        INutritionOrderOperation NutritionOrders { get; }
+        INutritionOrderResource NutritionOrders { get; }
 
         /// <summary>Access FHIR Observation resources.</summary>
-        IObservationOperation Observations { get; }
+        IObservationResource Observations { get; }
 
         /// <summary>Access FHIR ObservationDefinition resources.</summary>
-        IObservationDefinitionOperation ObservationDefinitions { get; }
+        IObservationDefinitionResource ObservationDefinitions { get; }
 
         /// <summary>Access FHIR OperationDefinition resources.</summary>
-        IOperationDefinitionOperation OperationDefinitions { get; }
+        IOperationDefinitionResource OperationDefinitions { get; }
 
         /// <summary>Access FHIR OperationOutcome resources.</summary>
-        IOperationOutcomeOperation OperationOutcomes { get; }
+        IOperationOutcomeResource OperationOutcomes { get; }
 
         /// <summary>Access FHIR Organization resources.</summary>
-        IOrganizationOperation Organizations { get; }
+        IOrganizationResource Organizations { get; }
 
         /// <summary>Access FHIR OrganizationAffiliation resources.</summary>
-        IOrganizationAffiliationOperation OrganizationAffiliations { get; }
+        IOrganizationAffiliationResource OrganizationAffiliations { get; }
 
         /// <summary>Access FHIR Parameters resources.</summary>
-        IParametersOperation Parameters { get; }
+        IParametersResource Parameters { get; }
 
         /// <summary>Access FHIR Patient resources.</summary>
-        IPatientOperation Patients { get; }
+        IPatientResource Patients { get; }
 
         /// <summary>Access FHIR PaymentNotice resources.</summary>
-        IPaymentNoticeOperation PaymentNotices { get; }
+        IPaymentNoticeResource PaymentNotices { get; }
 
         /// <summary>Access FHIR PaymentReconciliation resources.</summary>
-        IPaymentReconciliationOperation PaymentReconciliations { get; }
+        IPaymentReconciliationResource PaymentReconciliations { get; }
 
         /// <summary>Access FHIR Person resources.</summary>
-        IPersonOperation Persons { get; }
+        IPersonResource Persons { get; }
 
         /// <summary>Access FHIR PlanDefinition resources.</summary>
-        IPlanDefinitionOperation PlanDefinitions { get; }
+        IPlanDefinitionResource PlanDefinitions { get; }
 
         /// <summary>Access FHIR Practitioner resources.</summary>
-        IPractitionerOperation Practitioners { get; }
+        IPractitionerResource Practitioners { get; }
 
         /// <summary>Access FHIR PractitionerRole resources.</summary>
-        IPractitionerRoleOperation PractitionerRoles { get; }
+        IPractitionerRoleResource PractitionerRoles { get; }
 
         /// <summary>Access FHIR Procedure resources.</summary>
-        IProcedureOperation Procedures { get; }
+        IProcedureResource Procedures { get; }
 
         /// <summary>Access FHIR Provenance resources.</summary>
-        IProvenanceOperation Provenances { get; }
+        IProvenanceResource Provenances { get; }
 
         /// <summary>Access FHIR Questionnaire resources.</summary>
-        IQuestionnaireOperation Questionnaires { get; }
+        IQuestionnaireResource Questionnaires { get; }
 
         /// <summary>Access FHIR QuestionnaireResponse resources.</summary>
-        IQuestionnaireResponseOperation QuestionnaireResponses { get; }
+        IQuestionnaireResponseResource QuestionnaireResponses { get; }
 
         /// <summary>Access FHIR RelatedPerson resources.</summary>
-        IRelatedPersonOperation RelatedPersons { get; }
+        IRelatedPersonResource RelatedPersons { get; }
 
         /// <summary>Access FHIR RequestGroup resources.</summary>
-        IRequestGroupOperation RequestGroups { get; }
+        IRequestGroupResource RequestGroups { get; }
 
         /// <summary>Access FHIR ResearchDefinition resources.</summary>
-        IResearchDefinitionOperation ResearchDefinitions { get; }
+        IResearchDefinitionResource ResearchDefinitions { get; }
 
         /// <summary>Access FHIR ResearchElementDefinition resources.</summary>
-        IResearchElementDefinitionOperation ResearchElementDefinitions { get; }
+        IResearchElementDefinitionResource ResearchElementDefinitions { get; }
 
         /// <summary>Access FHIR ResearchStudy resources.</summary>
-        IResearchStudyOperation ResearchStudies { get; }
+        IResearchStudyResource ResearchStudies { get; }
 
         /// <summary>Access FHIR ResearchSubject resources.</summary>
-        IResearchSubjectOperation ResearchSubjects { get; }
+        IResearchSubjectResource ResearchSubjects { get; }
 
         /// <summary>Access FHIR RiskAssessment resources.</summary>
-        IRiskAssessmentOperation RiskAssessments { get; }
+        IRiskAssessmentResource RiskAssessments { get; }
 
         /// <summary>Access FHIR RiskEvidenceSynthesis resources.</summary>
-        IRiskEvidenceSynthesisOperation RiskEvidenceSyntheses { get; }
+        IRiskEvidenceSynthesisResource RiskEvidenceSyntheses { get; }
 
         /// <summary>Access FHIR Schedule resources.</summary>
-        IScheduleOperation Schedules { get; }
+        IScheduleResource Schedules { get; }
 
         /// <summary>Access FHIR SearchParameter resources.</summary>
-        ISearchParameterOperation SearchParameters { get; }
+        ISearchParameterResource SearchParameters { get; }
 
         /// <summary>Access FHIR ServiceRequest resources.</summary>
-        IServiceRequestOperation ServiceRequests { get; }
+        IServiceRequestResource ServiceRequests { get; }
 
         /// <summary>Access FHIR Slot resources.</summary>
-        ISlotOperation Slots { get; }
+        ISlotResource Slots { get; }
 
         /// <summary>Access FHIR Specimen resources.</summary>
-        ISpecimenOperation Specimens { get; }
+        ISpecimenResource Specimens { get; }
 
         /// <summary>Access FHIR SpecimenDefinition resources.</summary>
-        ISpecimenDefinitionOperation SpecimenDefinitions { get; }
+        ISpecimenDefinitionResource SpecimenDefinitions { get; }
 
         /// <summary>Access FHIR StructureDefinition resources.</summary>
-        IStructureDefinitionOperation StructureDefinitions { get; }
+        IStructureDefinitionResource StructureDefinitions { get; }
 
         /// <summary>Access FHIR StructureMap resources.</summary>
-        IStructureMapOperation StructureMaps { get; }
+        IStructureMapResource StructureMaps { get; }
 
         /// <summary>Access FHIR Subscription resources.</summary>
-        ISubscriptionOperation Subscriptions { get; }
+        ISubscriptionResource Subscriptions { get; }
 
         /// <summary>Access FHIR Substance resources.</summary>
-        ISubstanceOperation Substances { get; }
+        ISubstanceResource Substances { get; }
 
         /// <summary>Access FHIR SubstanceNucleicAcid resources.</summary>
-        ISubstanceNucleicAcidOperation SubstanceNucleicAcids { get; }
+        ISubstanceNucleicAcidResource SubstanceNucleicAcids { get; }
 
         /// <summary>Access FHIR SubstancePolymer resources.</summary>
-        ISubstancePolymerOperation SubstancePolymers { get; }
+        ISubstancePolymerResource SubstancePolymers { get; }
 
         /// <summary>Access FHIR SubstanceProtein resources.</summary>
-        ISubstanceProteinOperation SubstanceProteins { get; }
+        ISubstanceProteinResource SubstanceProteins { get; }
 
         /// <summary>Access FHIR SubstanceReferenceInformation resources.</summary>
-        ISubstanceReferenceInformationOperation SubstanceReferenceInformations { get; }
+        ISubstanceReferenceInformationResource SubstanceReferenceInformations { get; }
 
         /// <summary>Access FHIR SubstanceSourceMaterial resources.</summary>
-        ISubstanceSourceMaterialOperation SubstanceSourceMaterials { get; }
+        ISubstanceSourceMaterialResource SubstanceSourceMaterials { get; }
 
         /// <summary>Access FHIR SubstanceSpecification resources.</summary>
-        ISubstanceSpecificationOperation SubstanceSpecifications { get; }
+        ISubstanceSpecificationResource SubstanceSpecifications { get; }
 
         /// <summary>Access FHIR SupplyDelivery resources.</summary>
-        ISupplyDeliveryOperation SupplyDeliveries { get; }
+        ISupplyDeliveryResource SupplyDeliveries { get; }
 
         /// <summary>Access FHIR SupplyRequest resources.</summary>
-        ISupplyRequestOperation SupplyRequests { get; }
+        ISupplyRequestResource SupplyRequests { get; }
 
         /// <summary>Access FHIR Task resources.</summary>
-        ITaskOperation Tasks { get; }
+        ITaskResource Tasks { get; }
 
         /// <summary>Access FHIR TerminologyCapabilities resources.</summary>
-        ITerminologyCapabilitiesOperation TerminologyCapabilities { get; }
+        ITerminologyCapabilitiesResource TerminologyCapabilities { get; }
 
         /// <summary>Access FHIR TestReport resources.</summary>
-        ITestReportOperation TestReports { get; }
+        ITestReportResource TestReports { get; }
 
         /// <summary>Access FHIR TestScript resources.</summary>
-        ITestScriptOperation TestScripts { get; }
+        ITestScriptResource TestScripts { get; }
 
         /// <summary>Access FHIR ValueSet resources.</summary>
-        IValueSetOperation ValueSets { get; }
+        IValueSetResource ValueSets { get; }
 
         /// <summary>Access FHIR VerificationResult resources.</summary>
-        IVerificationResultOperation VerificationResults { get; }
+        IVerificationResultResource VerificationResults { get; }
 
         /// <summary>Access FHIR VisionPrescription resources.</summary>
-        IVisionPrescriptionOperation VisionPrescriptions { get; }
+        IVisionPrescriptionResource VisionPrescriptions { get; }
     }
 }
