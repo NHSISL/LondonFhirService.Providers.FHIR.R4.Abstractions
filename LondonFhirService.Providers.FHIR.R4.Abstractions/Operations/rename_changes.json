@@ -1,0 +1,737 @@
+[
+  {
+    "file": "IAppointmentProvider.cs",
+    "renamed_to": "IAppointmentOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IAppointmentResponseProvider.cs",
+    "renamed_to": "IAppointmentResponseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IAuditEventProvider.cs",
+    "renamed_to": "IAuditEventOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IBasicProvider.cs",
+    "renamed_to": "IBasicOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IBinaryProvider.cs",
+    "renamed_to": "IBinaryOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IBiologicallyDerivedProductProvider.cs",
+    "renamed_to": "IBiologicallyDerivedProductOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IBodyStructureProvider.cs",
+    "renamed_to": "IBodyStructureOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IBundleProvider.cs",
+    "renamed_to": "IBundleOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICapabilityStatementProvider.cs",
+    "renamed_to": "ICapabilityStatementOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICarePlanProvider.cs",
+    "renamed_to": "ICarePlanOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICareTeamProvider.cs",
+    "renamed_to": "ICareTeamOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICatalogEntryProvider.cs",
+    "renamed_to": "ICatalogEntryOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IChargeItemDefinitionProvider.cs",
+    "renamed_to": "IChargeItemDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IChargeItemProvider.cs",
+    "renamed_to": "IChargeItemOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IClaimProvider.cs",
+    "renamed_to": "IClaimOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IClaimResponseProvider.cs",
+    "renamed_to": "IClaimResponseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IClinicalImpressionProvider.cs",
+    "renamed_to": "IClinicalImpressionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICodeSystemProvider.cs",
+    "renamed_to": "ICodeSystemOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICommunicationProvider.cs",
+    "renamed_to": "ICommunicationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICommunicationRequestProvider.cs",
+    "renamed_to": "ICommunicationRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICompartmentDefinitionProvider.cs",
+    "renamed_to": "ICompartmentDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICompositionProvider.cs",
+    "renamed_to": "ICompositionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IConceptMapProvider.cs",
+    "renamed_to": "IConceptMapOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IConditionProvider.cs",
+    "renamed_to": "IConditionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IConsentProvider.cs",
+    "renamed_to": "IConsentOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IContractProvider.cs",
+    "renamed_to": "IContractOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICoverageEligibilityRequestProvider.cs",
+    "renamed_to": "ICoverageEligibilityRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICoverageEligibilityResponseProvider.cs",
+    "renamed_to": "ICoverageEligibilityResponseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ICoverageProvider.cs",
+    "renamed_to": "ICoverageOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDetectedIssueProvider.cs",
+    "renamed_to": "IDetectedIssueOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDeviceDefinitionProvider.cs",
+    "renamed_to": "IDeviceDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDeviceMetricProvider.cs",
+    "renamed_to": "IDeviceMetricOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDeviceProvider.cs",
+    "renamed_to": "IDeviceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDeviceRequestProvider.cs",
+    "renamed_to": "IDeviceRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDeviceUseStatementProvider.cs",
+    "renamed_to": "IDeviceUseStatementOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDiagnosticReportProvider.cs",
+    "renamed_to": "IDiagnosticReportOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDocumentManifestProvider.cs",
+    "renamed_to": "IDocumentManifestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IDocumentReferenceProvider.cs",
+    "renamed_to": "IDocumentReferenceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEffectEvidenceSynthesisProvider.cs",
+    "renamed_to": "IEffectEvidenceSynthesisOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEncounterProvider.cs",
+    "renamed_to": "IEncounterOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEndpointProvider.cs",
+    "renamed_to": "IEndpointOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEnrollmentRequestProvider.cs",
+    "renamed_to": "IEnrollmentRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEnrollmentResponseProvider.cs",
+    "renamed_to": "IEnrollmentResponseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEpisodeOfCareProvider.cs",
+    "renamed_to": "IEpisodeOfCareOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEventDefinitionProvider.cs",
+    "renamed_to": "IEventDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEvidenceProvider.cs",
+    "renamed_to": "IEvidenceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IEvidenceVariableProvider.cs",
+    "renamed_to": "IEvidenceVariableOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IExampleScenarioProvider.cs",
+    "renamed_to": "IExampleScenarioOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IExplanationOfBenefitProvider.cs",
+    "renamed_to": "IExplanationOfBenefitOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IFamilyMemberHistoryProvider.cs",
+    "renamed_to": "IFamilyMemberHistoryOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IFlagProvider.cs",
+    "renamed_to": "IFlagOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IGoalProvider.cs",
+    "renamed_to": "IGoalOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IGraphDefinitionProvider.cs",
+    "renamed_to": "IGraphDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IGroupProvider.cs",
+    "renamed_to": "IGroupOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IGuidanceResponseProvider.cs",
+    "renamed_to": "IGuidanceResponseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IHealthcareServiceProvider.cs",
+    "renamed_to": "IHealthcareServiceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IImagingStudyProvider.cs",
+    "renamed_to": "IImagingStudyOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IImmunizationEvaluationProvider.cs",
+    "renamed_to": "IImmunizationEvaluationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IImmunizationProvider.cs",
+    "renamed_to": "IImmunizationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IImmunizationRecommendationProvider.cs",
+    "renamed_to": "IImmunizationRecommendationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IImplementationGuideProvider.cs",
+    "renamed_to": "IImplementationGuideOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IInsurancePlanProvider.cs",
+    "renamed_to": "IInsurancePlanOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IInvoiceProvider.cs",
+    "renamed_to": "IInvoiceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ILibraryProvider.cs",
+    "renamed_to": "ILibraryOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ILinkageProvider.cs",
+    "renamed_to": "ILinkageOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IListProvider.cs",
+    "renamed_to": "IListOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ILocationProvider.cs",
+    "renamed_to": "ILocationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMeasureProvider.cs",
+    "renamed_to": "IMeasureOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMeasureReportProvider.cs",
+    "renamed_to": "IMeasureReportOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMediaProvider.cs",
+    "renamed_to": "IMediaOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicationAdministrationProvider.cs",
+    "renamed_to": "IMedicationAdministrationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicationDispenseProvider.cs",
+    "renamed_to": "IMedicationDispenseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicationKnowledgeProvider.cs",
+    "renamed_to": "IMedicationKnowledgeOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicationProvider.cs",
+    "renamed_to": "IMedicationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicationRequestProvider.cs",
+    "renamed_to": "IMedicationRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicationStatementProvider.cs",
+    "renamed_to": "IMedicationStatementOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductAuthorizationProvider.cs",
+    "renamed_to": "IMedicinalProductAuthorizationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductContraindicationProvider.cs",
+    "renamed_to": "IMedicinalProductContraindicationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductIndicationProvider.cs",
+    "renamed_to": "IMedicinalProductIndicationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductIngredientProvider.cs",
+    "renamed_to": "IMedicinalProductIngredientOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductInteractionProvider.cs",
+    "renamed_to": "IMedicinalProductInteractionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductManufacturedProvider.cs",
+    "renamed_to": "IMedicinalProductManufacturedOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductPackagedProvider.cs",
+    "renamed_to": "IMedicinalProductPackagedOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductPharmaceuticalProvider.cs",
+    "renamed_to": "IMedicinalProductPharmaceuticalOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductProvider.cs",
+    "renamed_to": "IMedicinalProductOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMedicinalProductUndesirableEffectProvider.cs",
+    "renamed_to": "IMedicinalProductUndesirableEffectOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMessageDefinitionProvider.cs",
+    "renamed_to": "IMessageDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMessageHeaderProvider.cs",
+    "renamed_to": "IMessageHeaderOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IMolecularSequenceProvider.cs",
+    "renamed_to": "IMolecularSequenceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "INamingSystemProvider.cs",
+    "renamed_to": "INamingSystemOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "INutritionOrderProvider.cs",
+    "renamed_to": "INutritionOrderOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IObservationDefinitionProvider.cs",
+    "renamed_to": "IObservationDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IObservationProvider.cs",
+    "renamed_to": "IObservationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IOperationDefinitionProvider.cs",
+    "renamed_to": "IOperationDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IOperationOutcomeProvider.cs",
+    "renamed_to": "IOperationOutcomeOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IOrganizationAffiliationProvider.cs",
+    "renamed_to": "IOrganizationAffiliationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IOrganizationProvider.cs",
+    "renamed_to": "IOrganizationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IParametersProvider.cs",
+    "renamed_to": "IParametersOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPatientProvider.cs",
+    "renamed_to": "IPatientOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPaymentNoticeProvider.cs",
+    "renamed_to": "IPaymentNoticeOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPaymentReconciliationProvider.cs",
+    "renamed_to": "IPaymentReconciliationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPersonProvider.cs",
+    "renamed_to": "IPersonOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPlanDefinitionProvider.cs",
+    "renamed_to": "IPlanDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPractitionerProvider.cs",
+    "renamed_to": "IPractitionerOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IPractitionerRoleProvider.cs",
+    "renamed_to": "IPractitionerRoleOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IProcedureProvider.cs",
+    "renamed_to": "IProcedureOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IProvenanceProvider.cs",
+    "renamed_to": "IProvenanceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IQuestionnaireProvider.cs",
+    "renamed_to": "IQuestionnaireOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IQuestionnaireResponseProvider.cs",
+    "renamed_to": "IQuestionnaireResponseOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IRelatedPersonProvider.cs",
+    "renamed_to": "IRelatedPersonOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IRequestGroupProvider.cs",
+    "renamed_to": "IRequestGroupOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IResearchDefinitionProvider.cs",
+    "renamed_to": "IResearchDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IResearchElementDefinitionProvider.cs",
+    "renamed_to": "IResearchElementDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IResearchStudyProvider.cs",
+    "renamed_to": "IResearchStudyOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IResearchSubjectProvider.cs",
+    "renamed_to": "IResearchSubjectOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IResourceProvider.cs",
+    "renamed_to": "IResourceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IRiskAssessmentProvider.cs",
+    "renamed_to": "IRiskAssessmentOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IRiskEvidenceSynthesisProvider.cs",
+    "renamed_to": "IRiskEvidenceSynthesisOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IScheduleProvider.cs",
+    "renamed_to": "IScheduleOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISearchParameterProvider.cs",
+    "renamed_to": "ISearchParameterOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IServiceRequestProvider.cs",
+    "renamed_to": "IServiceRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISlotProvider.cs",
+    "renamed_to": "ISlotOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISpecimenDefinitionProvider.cs",
+    "renamed_to": "ISpecimenDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISpecimenProvider.cs",
+    "renamed_to": "ISpecimenOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IStructureDefinitionProvider.cs",
+    "renamed_to": "IStructureDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IStructureMapProvider.cs",
+    "renamed_to": "IStructureMapOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubscriptionProvider.cs",
+    "renamed_to": "ISubscriptionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstanceNucleicAcidProvider.cs",
+    "renamed_to": "ISubstanceNucleicAcidOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstancePolymerProvider.cs",
+    "renamed_to": "ISubstancePolymerOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstanceProteinProvider.cs",
+    "renamed_to": "ISubstanceProteinOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstanceProvider.cs",
+    "renamed_to": "ISubstanceOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstanceReferenceInformationProvider.cs",
+    "renamed_to": "ISubstanceReferenceInformationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstanceSourceMaterialProvider.cs",
+    "renamed_to": "ISubstanceSourceMaterialOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISubstanceSpecificationProvider.cs",
+    "renamed_to": "ISubstanceSpecificationOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISupplyDeliveryProvider.cs",
+    "renamed_to": "ISupplyDeliveryOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ISupplyRequestProvider.cs",
+    "renamed_to": "ISupplyRequestOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ITaskProvider.cs",
+    "renamed_to": "ITaskOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ITerminologyCapabilitiesProvider.cs",
+    "renamed_to": "ITerminologyCapabilitiesOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ITestReportProvider.cs",
+    "renamed_to": "ITestReportOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "ITestScriptProvider.cs",
+    "renamed_to": "ITestScriptOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IValueSetProvider.cs",
+    "renamed_to": "IValueSetOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IVerificationResultProvider.cs",
+    "renamed_to": "IVerificationResultOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IVisionPrescriptionProvider.cs",
+    "renamed_to": "IVisionPrescriptionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IAccountProvider.cs",
+    "renamed_to": "IAccountOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IActivityDefinitionProvider.cs",
+    "renamed_to": "IActivityDefinitionOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IAdverseEventProvider.cs",
+    "renamed_to": "IAdverseEventOperation.cs",
+    "code_changed": true
+  },
+  {
+    "file": "IAllergyIntoleranceProvider.cs",
+    "renamed_to": "IAllergyIntoleranceOperation.cs",
+    "code_changed": true
+  }
+]
