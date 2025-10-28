@@ -4,6 +4,7 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Rest;
 
@@ -23,7 +24,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        TResource Read(string id, CancellationToken cancellationToken = default);
+        ValueTask<TResource> Read(string id, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Read a specific version of a resource.
@@ -34,7 +35,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        TResource VRead(string id, string versionId, CancellationToken cancellationToken = default);
+        ValueTask<TResource> VRead(string id, string versionId, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Retrieve the change history for a specific resource.
@@ -46,7 +47,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        Bundle HistoryInstance(
+        ValueTask<Bundle> HistoryInstance(
             string id,
             DateTimeOffset? since = null,
             int? count = null,
@@ -60,7 +61,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        Bundle Search(SearchParams @params, CancellationToken cancellationToken = default);
+        ValueTask<Bundle> Search(SearchParams @params, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Retrieve the history across all instances of the resource type.
@@ -71,7 +72,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        Bundle HistoryType(
+        ValueTask<Bundle> HistoryType(
             DateTimeOffset? since = null,
             int? count = null,
             CancellationToken cancellationToken = default);
@@ -85,7 +86,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        Bundle HistorySystem(
+        ValueTask<Bundle> HistorySystem(
             DateTimeOffset? since = null,
             int? count = null,
             CancellationToken cancellationToken = default);
@@ -98,7 +99,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        TResource Create(TResource resource, CancellationToken cancellationToken = default);
+        ValueTask<TResource> Create(TResource resource, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update an existing resource by id.
@@ -108,7 +109,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        TResource Update(TResource resource, CancellationToken cancellationToken = default);
+        ValueTask<TResource> Update(TResource resource, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Apply a patch to an existing resource.
@@ -119,7 +120,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        TResource Patch(string id, Parameters patchParameters, CancellationToken cancellationToken = default);
+        ValueTask<TResource> Patch(string id, Parameters patchParameters, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a resource by id.
@@ -129,6 +130,6 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Optional token to observe while awaiting the operation. 
         /// Defaults to <see cref="CancellationToken.None"/>.
         /// </param>
-        OperationOutcome Delete(string id, CancellationToken cancellationToken = default);
+        ValueTask<OperationOutcome> Delete(string id, CancellationToken cancellationToken = default);
     }
 }

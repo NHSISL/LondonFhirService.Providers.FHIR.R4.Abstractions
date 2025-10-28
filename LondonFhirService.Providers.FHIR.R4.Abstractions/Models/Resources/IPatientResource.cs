@@ -4,6 +4,7 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Hl7.Fhir.Model;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources
@@ -28,7 +29,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources
         /// Optional token to observe while awaiting the operation.  
         /// Defaults to <see cref="CancellationToken.None"/> if not supplied.
         /// </param>
-        Bundle Everything(
+        ValueTask<Bundle> Everything(
             string id,
             DateTimeOffset? start = null,
             DateTimeOffset? end = null,
@@ -46,7 +47,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources
         /// Optional token to observe while awaiting the operation.  
         /// Defaults to <see cref="CancellationToken.None"/> if not supplied.
         /// </param>
-        Bundle Match(
+        ValueTask<Bundle> Match(
             Parameters parameters,
             CancellationToken cancellationToken = default);
     }
