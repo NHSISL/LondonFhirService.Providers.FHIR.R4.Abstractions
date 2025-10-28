@@ -2,6 +2,7 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
@@ -10,6 +11,8 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     {
         /// <summary>Gets the unique name used to identify the provider.</summary>
         string ProviderName { get; }
+
+        ProviderCapabilities Capabilities { get; }
 
         /// <summary>Access FHIR Account resources.</summary>
         IAccountResource Accounts { get; }

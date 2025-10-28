@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Rest;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
 {
@@ -16,6 +17,8 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     /// <typeparam name="TResource">FHIR R4 resource type.</typeparam>
     public interface IResourceOperation<TResource> where TResource : Resource
     {
+        ResourceCapabilities Capabilities { get; }
+
         /// <summary>
         /// Read the current state of a resource by id.
         /// </summary>
