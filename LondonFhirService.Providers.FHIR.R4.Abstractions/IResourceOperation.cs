@@ -3,6 +3,7 @@
 // ---------------------------------------------------------
 
 using System;
+using System.Threading.Tasks;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Rest;
 
@@ -14,7 +15,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     /// <typeparam name="TResource">FHIR resource type (R4).</typeparam>
     public interface IResourceOperation<TResource> where TResource : Resource
     {
-        TResource Read(string id);
+        ValueTask<TResource> ReadAsync(string id);
         TResource VRead(string id, string versionId);
         Bundle HistoryInstance(string id, DateTimeOffset? since = null, int? count = null);
         Bundle Search(SearchParams @params);
