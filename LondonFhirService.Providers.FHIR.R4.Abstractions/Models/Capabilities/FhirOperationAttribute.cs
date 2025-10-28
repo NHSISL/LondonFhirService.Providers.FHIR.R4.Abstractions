@@ -6,7 +6,7 @@ using System;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities
 {
-    // <summary>
+    /// <summary>
     /// Marker attribute for **non-standard, resource-specific operations** 
     /// (e.g., <c>$everything</c>, <c>$match</c>).
     ///
