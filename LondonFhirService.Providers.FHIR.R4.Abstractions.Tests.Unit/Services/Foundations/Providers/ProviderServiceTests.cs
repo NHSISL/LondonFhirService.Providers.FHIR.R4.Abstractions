@@ -18,18 +18,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
         {
             this.fhirProviders = new List<IFhirProvider>
             {
-                new TestFhirProvider
-                {
-                    ProviderName = "ProviderA",
-                },
-                new TestFhirProvider
-                {
-                    ProviderName = "ProviderB",
-                },
-                new TestFhirProvider
-                {
-                    ProviderName = "ProviderC",
-                }
+                new TestFhirProvider()
             };
 
             this.providerService = new ProviderService(this.fhirProviders);

@@ -10,14 +10,12 @@ using Xunit.Abstractions;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Capabilities
 {
-    public partial class ResourceOperationTests
+    public partial class ResourceCapabilityTests
     {
         ITestOutputHelper output;
 
-        public ResourceOperationTests(ITestOutputHelper output)
-        {
+        public ResourceCapabilityTests(ITestOutputHelper output) =>
             this.output = output;
-        }
 
         [Fact]
         public void CapabilitiesShouldContainOnlyEverything()
