@@ -22,7 +22,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Capabiliti
         {
             // given
             var provider = new TestFhirProvider();
-            var providerName = GetType().FullName ?? GetType().Name;
+            var providerName = provider.GetType().FullName ?? GetType().Name;
 
             var patientResourceName =
                 provider.Patients.GetType().Name.EndsWith("Resource", StringComparison.Ordinal)
