@@ -2,7 +2,6 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
-using System;
 using System.Linq;
 using FluentAssertions;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models;
@@ -23,11 +22,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Capabiliti
             // given
             var provider = new TestFhirProvider();
             var providerName = provider.GetType().FullName ?? GetType().Name;
-
-            var patientResourceName =
-                provider.Patients.GetType().Name.EndsWith("Resource", StringComparison.Ordinal)
-                    ? provider.Patients.GetType().Name[..^"Resource".Length]
-                    : provider.Patients.GetType().Name;
+            var patientResourceName = nameof(TestFhirProvider.Patients);
 
             // when
             var capabilities = provider.Capabilities;

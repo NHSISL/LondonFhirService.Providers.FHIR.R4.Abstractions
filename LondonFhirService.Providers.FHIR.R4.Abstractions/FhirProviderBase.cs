@@ -53,8 +53,16 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
                 if (instance is null)
                     continue;
 
-                if (TryGetResourceCapabilities(instance, out var capabilities))
-                    resourceCapabilities.Add(capabilities);
+                if (TryGetResourceCapabilities(instance, out var implCaps))
+                {
+                    // IMPORTANT: Use the PROVIDER PROPERTY NAME for the resource name,
+                    // but keep the supported operations from the implementation.
+                    resourceCapabilities.Add(new ResourceCapabilities
+                    {
+                        ResourceName = property.Name,
+                        SupportedOperations = implCaps.SupportedOperations
+                    });
+                }
             }
 
             var uniqueSorted = resourceCapabilities
