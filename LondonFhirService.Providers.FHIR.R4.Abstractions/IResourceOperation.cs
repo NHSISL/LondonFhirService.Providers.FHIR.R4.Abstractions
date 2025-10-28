@@ -3,6 +3,7 @@
 // ---------------------------------------------------------
 
 using System;
+using System.Threading;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Rest;
 
@@ -11,18 +12,123 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     /// <summary>
     /// Canonical FHIR REST surface for a resource type.
     /// </summary>
-    /// <typeparam name="TResource">FHIR resource type (R4).</typeparam>
+    /// <typeparam name="TResource">FHIR R4 resource type.</typeparam>
     public interface IResourceOperation<TResource> where TResource : Resource
     {
-        TResource Read(string id);
-        TResource VRead(string id, string versionId);
-        Bundle HistoryInstance(string id, DateTimeOffset? since = null, int? count = null);
-        Bundle Search(SearchParams @params);
-        Bundle HistoryType(DateTimeOffset? since = null, int? count = null);
-        Bundle HistorySystem(DateTimeOffset? since = null, int? count = null);
-        TResource Create(TResource resource);
-        TResource Update(TResource resource);
-        TResource Patch(string id, Parameters patchParameters);
-        OperationOutcome Delete(string id);
+        /// <summary>
+        /// Read the current state of a resource by id.
+        /// </summary>
+        /// <param name="id">Logical id of the resource.</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        TResource Read(string id, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Read a specific version of a resource.
+        /// </summary>
+        /// <param name="id">Logical id of the resource.</param>
+        /// <param name="versionId">Version id of the resource.</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        TResource VRead(string id, string versionId, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Retrieve the change history for a specific resource.
+        /// </summary>
+        /// <param name="id">Logical id of the resource.</param>
+        /// <param name="since">Optional: Only include changes since this time (_since).</param>
+        /// <param name="count">Optional: Maximum number of results (_count).</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        Bundle HistoryInstance(
+            string id,
+            DateTimeOffset? since = null,
+            int? count = null,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Search for resources matching the given parameters.
+        /// </summary>
+        /// <param name="params">FHIR search parameters (query).</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        Bundle Search(SearchParams @params, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Retrieve the history across all instances of the resource type.
+        /// </summary>
+        /// <param name="since">Optional: Only include changes since this time (_since).</param>
+        /// <param name="count">Optional: Maximum number of results (_count).</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        Bundle HistoryType(
+            DateTimeOffset? since = null,
+            int? count = null,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Retrieve the history across all resource types in the system.
+        /// </summary>
+        /// <param name="since">Optional: Only include changes since this time (_since).</param>
+        /// <param name="count">Optional: Maximum number of results (_count).</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        Bundle HistorySystem(
+            DateTimeOffset? since = null,
+            int? count = null,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create a new resource.
+        /// </summary>
+        /// <param name="resource">The resource to create.</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        TResource Create(TResource resource, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update an existing resource by id.
+        /// </summary>
+        /// <param name="resource">The resource to update.</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        TResource Update(TResource resource, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Apply a patch to an existing resource.
+        /// </summary>
+        /// <param name="id">Logical id of the resource to patch.</param>
+        /// <param name="patchParameters">Patch parameters (FHIR Parameters resource).</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        TResource Patch(string id, Parameters patchParameters, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete a resource by id.
+        /// </summary>
+        /// <param name="id">Logical id of the resource to delete.</param>
+        /// <param name="cancellationToken">
+        /// Optional token to observe while awaiting the operation. 
+        /// Defaults to <see cref="CancellationToken.None"/>.
+        /// </param>
+        OperationOutcome Delete(string id, CancellationToken cancellationToken = default);
     }
 }
