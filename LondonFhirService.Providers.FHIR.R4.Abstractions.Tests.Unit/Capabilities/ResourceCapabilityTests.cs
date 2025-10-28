@@ -43,7 +43,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Capabiliti
             capabilities.ResourceName.Should().Be(resourceName);
             var operations = capabilities.SupportedOperations.ToArray();
             operations.Single();
-            operations.Contains("Everything");
+            operations.Should().Contain("Everything");
         }
     }
 }
