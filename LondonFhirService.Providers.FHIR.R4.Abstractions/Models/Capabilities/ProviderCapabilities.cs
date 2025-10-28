@@ -8,19 +8,18 @@ using System.Collections.Generic;
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities
 {
     /// <summary>
-    /// Capabilities for a single resource (e.g., Patient).
+    /// Capabilities for a single provider.
     /// </summary>
-    public sealed class ResourceCapabilities
+    public sealed class ProviderCapabilities
     {
         /// <summary>
-        /// The canonical FHIR resource name (for example, "Patient").
+        /// The canonical FHIR provider name (for example, "LondonFhirService.Providers.FHIR.R4").
         /// </summary>
         public string ResourceName { get; init; } = string.Empty;
 
         /// <summary>
-        /// The operations implemented on this resource. Standard methods appear when overridden on the base
-        /// resource class. Non-standard operations appear when decorated with <see cref="FhirOperationAttribute"/>.
+        /// The resources implemented on this provider.
         /// </summary>
-        public IReadOnlyCollection<string> SupportedOperations { get; init; } = Array.Empty<string>();
+        public IReadOnlyCollection<string> SupportedResources { get; init; } = Array.Empty<string>();
     }
 }

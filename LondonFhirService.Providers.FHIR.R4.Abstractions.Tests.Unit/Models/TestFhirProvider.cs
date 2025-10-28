@@ -3,6 +3,7 @@
 // ---------------------------------------------------------
 
 using System;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
@@ -10,6 +11,8 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
     internal class TestFhirProvider : IFhirProvider
     {
         public string ProviderName { get; set; }
+
+        public ProviderCapabilities Capabilities => throw new NotImplementedException();
 
         public IAccountResource Accounts => throw new NotImplementedException();
 

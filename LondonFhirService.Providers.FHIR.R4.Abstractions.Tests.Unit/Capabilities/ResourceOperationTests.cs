@@ -2,6 +2,7 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
+using System;
 using System.Linq;
 using FluentAssertions;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models;
@@ -22,21 +23,26 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Capabiliti
         public void CapabilitiesShouldContainOnlyEverything()
         {
             // given
-            var resource = new PatientResource();
+            var resource = new TestPatientResource();
+
+            var resourceName =
+                resource.GetType().Name.EndsWith("Resource", StringComparison.Ordinal)
+                    ? resource.GetType().Name[..^"Resource".Length]
+                    : resource.GetType().Name;
 
             // when
             var capabilities = resource.Capabilities;
 
             // then
             output.WriteLine($"Resource Name: {capabilities.ResourceName}");
-            output.WriteLine($"Supported Operations: {capabilities.ResourceName}");
+            output.WriteLine($"Supported Operations: ");
 
             foreach (var operation in capabilities.SupportedOperations)
             {
                 output.WriteLine($"- {operation}");
             }
 
-            capabilities.ResourceName.Should().Be("Patient");
+            capabilities.ResourceName.Should().Be(resourceName);
             var operations = capabilities.SupportedOperations.ToArray();
             operations.Single();
             operations.Contains("Everything");

@@ -3,6 +3,8 @@
 // ---------------------------------------------------------
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Hl7.Fhir.Model;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
@@ -13,7 +15,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
     /// Patient resource operations. Demonstrates a non-standard operation (<c>$everything</c>) included via
     /// <see cref="FhirOperationAttribute"/>.
     /// </summary>
-    public sealed class PatientResource : ResourceOperationBase<Patient>, IPatientResource
+    public sealed class TestPatientResource : ResourceOperationBase<Patient>, IPatientResource
     {
         /// <summary>
         /// Returns the patient and related resources. The method name appears in capabilities because it is decorated
@@ -27,13 +29,14 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
         /// <param name="count">Optional page size limit.</param>
         /// <returns>A bundle of resources related to the patient.</returns>
         [FhirOperation]
-        public Bundle Everything(
+        public async ValueTask<Bundle> Everything(
             string id,
             DateTimeOffset? start = null,
             DateTimeOffset? end = null,
             string typeFilter = null,
             DateTimeOffset? since = null,
-            int? count = null)
+            int? count = null,
+            CancellationToken cancellationToken = default)
         {
             return new Bundle { Type = Bundle.BundleType.Searchset };
         }
@@ -43,6 +46,8 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
         /// </summary>
         /// <param name="parameters">FHIR parameters for the match operation.</param>
         /// <returns>A bundle with match results.</returns>
-        public Bundle Match(Parameters parameters) => throw new NotImplementedException();
+        public async ValueTask<Bundle> Match(Parameters parameters,
+            CancellationToken cancellationToken = default) =>
+            throw new NotImplementedException();
     }
 }
