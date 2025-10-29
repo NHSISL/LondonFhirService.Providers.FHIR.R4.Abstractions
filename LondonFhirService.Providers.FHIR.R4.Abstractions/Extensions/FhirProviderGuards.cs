@@ -3,6 +3,7 @@
 // ---------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Hl7.Fhir.Model;
 
@@ -15,77 +16,96 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Extensions
     public static class FhirProviderGuards
     {
         /// <summary>
-        /// Checks whether the provider supports a given resource.
+        /// Checks whether a single provider supports a given resource and, optionally, an operation.
+        /// If <paramref name="operationName"/> is <c>null</c>, this checks for the resource only.
+        /// An empty/whitespace operation name returns <c>false</c>.
+        /// Comparisons are <see cref="StringComparison.Ordinal"/>.
         /// </summary>
-        /// <param name="provider">The FHIR provider instance.</param>
-        /// <param name="resourceName">The resource name (e.g., "Patient").</param>
-        /// <returns>
-        /// True if the provider declares support for the given resource; otherwise false.
-        /// </returns>
-        /// <example>
-        /// <code>
-        /// IFhirProvider provider = GetProvider();
-        /// bool supportsPatient = provider.SupportsResource("Patient");
-        /// if (supportsPatient)
-        /// {
-        ///     Console.WriteLine("Provider supports Patient resource.");
-        /// }
-        /// </code>
-        /// </example>
-        public static bool SupportsResource(this IFhirProvider provider, string resourceName) =>
-            provider?.Capabilities.SupportedResources.Any(
-                resource => string.Equals(resource.ResourceName, resourceName, StringComparison.Ordinal)) == true;
-
-        /// <summary>
-        /// Checks whether the provider supports a given resource and a specific operation on it.
-        /// </summary>
-        /// <param name="provider">The FHIR provider instance.</param>
-        /// <param name="resourceName">The resource name (e.g., "Patient").</param>
-        /// <param name="operationName">The operation name (e.g., "Read", "Search", "Everything").</param>
-        /// <returns>
-        /// True if the provider declares support for the given resource and operation; otherwise false.
-        /// </returns>
-        /// <example>
-        /// <code>
-        /// IFhirProvider provider = GetProvider();
-        /// bool supportsPatientRead = provider.SupportsResource("Patient", "Read");
-        /// if (supportsPatientRead)
-        /// {
-        ///     var patient = provider.Patients.Read("12345");
-        /// }
-        /// </code>
-        /// </example>
         public static bool SupportsResource(
             this IFhirProvider provider,
             string resourceName,
-            string operationName) =>
-            provider?.Capabilities.SupportedResources.Any(resource =>
-                string.Equals(resource.ResourceName, resourceName, StringComparison.Ordinal) &&
-                resource.SupportedOperations.Any(operation =>
-                    string.Equals(operation, operationName, StringComparison.Ordinal))) == true;
+            string operationName = null)
+        {
+            if (provider?.Capabilities?.SupportedResources == null)
+            {
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(resourceName))
+            {
+                return false;
+            }
+
+            var match = provider.Capabilities.SupportedResources
+                .FirstOrDefault(resource =>
+                    string.Equals(resource.ResourceName, resourceName, StringComparison.Ordinal));
+
+            if (match == null)
+            {
+                return false;
+            }
+
+            if (operationName is null)
+            {
+                return true;
+            }
+
+            if (string.IsNullOrWhiteSpace(operationName))
+            {
+                return false;
+            }
+
+            var operations = match.SupportedOperations ?? Enumerable.Empty<string>();
+
+            return operations.Any(operation =>
+                string.Equals(operation, operationName, StringComparison.Ordinal));
+        }
 
         /// <summary>
-        /// Checks whether the resource operation supports a given operation name.
+        /// Filters an enumerable of providers by whether they support a resource
+        /// and, optionally, a specific operation on that resource.
+        /// If <paramref name="operationName"/> is <c>null</c>, matches by resource only.
+        /// Comparisons are <see cref="StringComparison.Ordinal"/>.
         /// </summary>
-        /// <typeparam name="TResource">FHIR R4 resource type.</typeparam>
-        /// <param name="resource">The resource operation instance.</param>
-        /// <param name="operationName">Operation name (e.g., "Read", "Search", "Everything").</param>
-        /// <returns>True if the operation is supported; otherwise false.</returns>
-        /// <example>
-        /// <code>
-        /// IResourceOperation&lt;Patient&gt; patientOps = provider.Patients;
-        /// bool canSearch = patientOps.SupportsOperation("Search");
-        /// if (canSearch)
-        /// {
-        ///     var results = patientOps.Search(new SearchParams().Where("name=Smith"));
-        /// }
-        /// </code>
-        /// </example>
+        public static IEnumerable<IFhirProvider> SupportsResource(
+            this IEnumerable<IFhirProvider> providers,
+            string resourceName,
+            string operationName = null)
+        {
+            if (providers is null || string.IsNullOrWhiteSpace(resourceName))
+            {
+                return Enumerable.Empty<IFhirProvider>();
+            }
+
+            return providers.Where(provider =>
+                provider?.Capabilities?.SupportedResources?.Any(resource =>
+                    string.Equals(resource.ResourceName, resourceName, StringComparison.Ordinal) &&
+                    (operationName == null ||
+                        resource.SupportedOperations?.Any(operation =>
+                            string.Equals(operation, operationName, StringComparison.Ordinal)) == true)) == true);
+        }
+
+        /// <summary>
+        /// Checks whether a resource implementation supports a specific operation name.
+        /// Comparisons are <see cref="StringComparison.Ordinal"/>.
+        /// </summary>
         public static bool SupportsOperation<TResource>(
             this IResourceOperation<TResource> resource,
             string operationName)
-            where TResource : Resource =>
-            resource?.Capabilities.SupportedOperations.Any(
-                operation => string.Equals(operation, operationName, StringComparison.Ordinal)) == true;
+            where TResource : Resource
+        {
+            if (resource?.Capabilities?.SupportedOperations == null)
+            {
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(operationName))
+            {
+                return false;
+            }
+
+            return resource.Capabilities.SupportedOperations.Any(operation =>
+                string.Equals(operation, operationName, StringComparison.Ordinal));
+        }
     }
 }
