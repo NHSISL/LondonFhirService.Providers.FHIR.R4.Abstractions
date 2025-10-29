@@ -2,14 +2,17 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
-using LondonFhirService.Providers.FHIR.R4.Abstractions.Extensions;
-using LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models;
+using System.Collections.Generic;
+using System.Linq;
+using Hl7.Fhir.Model;
+using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Capabilities;
+using Moq;
 using Xunit.Abstractions;
 
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Extensions
 {
-    public class FhirProviderGuardsTests
+    public partial class FhirProviderGuardsTests
     {
         ITestOutputHelper output;
 
@@ -18,100 +21,15 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Extensions
             this.output = output;
         }
 
-        [Fact]
-        public void SupportsResourceReturnsTrueForPatient()
+        private void OutputCapabilities(IFhirProvider provider)
         {
-            // given
-            var provider = new TestFhirProvider();
-            OutputCapabilities(provider);
+            if (provider == null)
+            {
+                output.WriteLine("Provider Capabilities: null");
 
-            // when
-            bool result = provider.SupportsResource("Patients");
+                return;
+            }
 
-            // then
-            Assert.True(result);
-        }
-
-        [Fact]
-        public void SupportsResourceReturnsFalseForUnknownResource()
-        {
-            // given
-            var provider = new TestFhirProvider();
-            OutputCapabilities(provider);
-
-            // when
-            bool result = provider.SupportsResource("Observations");
-
-            // then
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void SupportsResourceWithOperationReturnsTrueForPatientEverything()
-        {
-            // given
-            var provider = new TestFhirProvider();
-            OutputCapabilities(provider);
-
-            // when
-            bool result = provider.SupportsResource("Patients", "Everything");
-
-            // then
-            Assert.True(result);
-        }
-
-        [Theory]
-        [InlineData("Patient", "Read")]
-        [InlineData("Patient", "Search")]
-        [InlineData("Patient", "Match")]
-        public void SupportsResourceWithOperationReturnsFalseForUnsupportedOperations(string resource, string operation)
-        {
-            // given
-            var provider = new TestFhirProvider();
-            OutputCapabilities(provider);
-
-            // when
-            bool result = provider.SupportsResource(resource, operation);
-
-            // then
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void SupportsOperationOnResourceReturnsTrueForEverything()
-        {
-            // given
-            var provider = new TestFhirProvider();
-            OutputCapabilities(provider);
-            var patientOps = provider.Patients;
-
-            // when
-            bool result = patientOps.SupportsOperation("Everything");
-
-            // then
-            Assert.True(result);
-        }
-
-        [Theory]
-        [InlineData("Read")]
-        [InlineData("Search")]
-        [InlineData("Match")]
-        public void SupportsOperationOnResourceReturnsFalseForUnsupportedOperations(string operation)
-        {
-            // given
-            var provider = new TestFhirProvider();
-            OutputCapabilities(provider);
-            var patientOps = provider.Patients;
-
-            // when
-            bool result = patientOps.SupportsOperation(operation);
-
-            // then
-            Assert.False(result);
-        }
-
-        private void OutputCapabilities(TestFhirProvider provider)
-        {
             output.WriteLine($"Provider Name: {provider.Capabilities.ProviderName}");
             output.WriteLine("   - Supported Resources:");
 
@@ -119,12 +37,97 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Extensions
             {
                 output.WriteLine($"      - {resource.ResourceName}");
                 output.WriteLine($"         - Supported Operations:");
+
                 foreach (var operation in resource.SupportedOperations)
                 {
                     output.WriteLine($"            - {operation}");
                 }
+
                 output.WriteLine("");
             }
+        }
+
+        private void OutputCapabilities<TResource>(IResourceOperation<TResource> resource)
+            where TResource : Resource
+        {
+            if (resource == null)
+            {
+                output.WriteLine("Resource Capabilities: null");
+
+                return;
+            }
+
+            output.WriteLine($"Resource Name: {resource.Capabilities.ResourceName}");
+            output.WriteLine("   - Supported Operations:");
+
+            foreach (var operation in resource.Capabilities.SupportedOperations)
+            {
+                output.WriteLine($"      - {operation}");
+            }
+
+            output.WriteLine(string.Empty);
+        }
+
+        private static IFhirProvider MakeProvider(
+            string name,
+            params (string Resource, string[] Operations)[] resources)
+        {
+            var providerCaps = new ProviderCapabilities
+            {
+                ProviderName = name,
+                SupportedResources = resources.Select(r => new ResourceCapabilities
+                {
+                    ResourceName = r.Resource,
+                    SupportedOperations = r.Operations?.ToList()
+                }).ToList()
+            };
+
+            var mock = new Mock<IFhirProvider>(MockBehavior.Strict);
+            mock.SetupGet(p => p.Capabilities).Returns(providerCaps);
+
+            // If IFhirProvider has more required members, add minimal setups here.
+
+            return mock.Object;
+        }
+
+        private static IFhirProvider MakeProviderWithNullCapabilities()
+        {
+            var mock = new Mock<IFhirProvider>(MockBehavior.Strict);
+            mock.SetupGet(p => p.Capabilities).Returns((ProviderCapabilities)null);
+            return mock.Object;
+        }
+
+        private static IFhirProvider MakeProviderWithNullResources(string name)
+        {
+            var providerCaps = new ProviderCapabilities
+            {
+                ProviderName = name,
+                SupportedResources = null
+            };
+
+            var mock = new Mock<IFhirProvider>(MockBehavior.Strict);
+            mock.SetupGet(p => p.Capabilities).Returns(providerCaps);
+            return mock.Object;
+        }
+
+        private static IFhirProvider MakeProviderWithNullOps(string name, string resourceName)
+        {
+            var providerCaps = new ProviderCapabilities
+            {
+                ProviderName = name,
+                SupportedResources = new List<ResourceCapabilities>
+                {
+                    new ResourceCapabilities
+                    {
+                        ResourceName = resourceName,
+                        SupportedOperations = null
+                    }
+                }
+            };
+
+            var mock = new Mock<IFhirProvider>(MockBehavior.Strict);
+            mock.SetupGet(p => p.Capabilities).Returns(providerCaps);
+            return mock.Object;
         }
     }
 }
