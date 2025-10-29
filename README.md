@@ -1,4 +1,4 @@
-﻿# LondonFhirService — FHIR - R4 Abstractions
+﻿# 🔥 LondonFhirService — FHIR - R4 Abstractions
 
 [![Build](https://github.com/NHSISL/LondonFhirService.Providers.FHIR.R4.Abstractions/actions/workflows/build.yml/badge.svg)](https://github.com/NHSISL/LondonFhirService.Providers.FHIR.R4.Abstractions/actions/workflows/build.yml)
 [![Nuget](https://img.shields.io/nuget/v/LondonFhirService.Providers.FHIR.R4.Abstractions?logo=nuget\&style=default\&color=blue)](https://www.nuget.org/packages/LondonFhirService.Providers.FHIR.R4.Abstractions)
@@ -356,63 +356,3 @@ or simply improving the documentation.
 
 ---
 
-## Class Diagram
-
-```mermaid
-classDiagram
-direction LR
-
-class IFhirProvider {
-  +Patients : IResourceOperation<Patient>
-  +Observations : IResourceOperation<Observation>
-  +Capabilities : ProviderCapabilities
-}
-
-class IResourceOperation~TResource~ {
-  +Read(id)
-  +Search(params)
-  +HistoryType(...)
-  +Everything(...)
-  +Capabilities : ResourceCapabilities
-}
-
-class FhirProviderBase {
-  <<internal helper>>
-  -ComputeCapabilities()
-  +Capabilities : ProviderCapabilities
-}
-
-class ResourceOperationBase~TResource~ {
-  <<internal helper>>
-  -ComputeCapabilities()
-  +Capabilities : ResourceCapabilities
-}
-
-class FhirOperation {
-  <<attribute>>
-  +Name : string
-}
-
-class FhirProviderGuards {
-  <<extensions>>
-  +SupportsResource(provider, name, op?)
-  +SupportsOperation(resourceOp, op)
-}
-
-IFhirProvider --> IResourceOperation~TResource~ : exposes resource ops
-FhirProviderBase <|.. IFhirProvider : optional base
-ResourceOperationBase~TResource~ <|.. IResourceOperation~TResource~ : optional base
-FhirOperation ..> ResourceOperationBase~TResource~ : marks custom ops
-FhirProviderGuards ..> IFhirProvider : queries Capabilities
-FhirProviderGuards ..> IResourceOperation~TResource~ : queries Capabilities
-```
-
-```mermaid
-flowchart LR
-    P[IFhirProvider] -->|exposes| R(IResourceOperation<T>)
-    R -->|decorated with| A[[[FhirOperation] attributes]]
-    R -->|computes| RC[ResourceCapabilities]
-    P -->|aggregates| PC[ProviderCapabilities]
-    G[FhirProviderGuards] -->|SupportsResource/Operation| PC
-    G -->|SupportsOperation| RC
-```
