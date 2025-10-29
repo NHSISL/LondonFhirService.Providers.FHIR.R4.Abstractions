@@ -2,12 +2,15 @@
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
+using System.Collections.Generic;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions
 {
     public interface IFhirAbstractionProvider
     {
+        IReadOnlyCollection<IFhirProvider> FhirProviders { get; }
+
         /// <summary>Access FHIR Account resources.</summary>
         IAccountResource Accounts(string providerName);
 
