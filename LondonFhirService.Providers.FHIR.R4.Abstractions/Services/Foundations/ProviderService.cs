@@ -10,9 +10,9 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations
 {
     internal partial class ProviderService : IProviderService
     {
-        private readonly IEnumerable<IFhirProvider> fhirProviders;
+        private readonly IReadOnlyCollection<IFhirProvider> fhirProviders;
 
-        public ProviderService(IEnumerable<IFhirProvider> fhirProviders)
+        public ProviderService(IReadOnlyCollection<IFhirProvider> fhirProviders)
         {
             this.fhirProviders = fhirProviders;
         }

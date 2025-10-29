@@ -3,6 +3,7 @@
 // ---------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations;
 
@@ -11,9 +12,13 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     public partial class FhirAbstractionProvider : IFhirAbstractionProvider
     {
         private IProviderService providerService { get; set; }
+        public IReadOnlyCollection<IFhirProvider> FhirProviders { get; private set; }
 
-        public FhirAbstractionProvider(IEnumerable<IFhirProvider> fhirProviders) =>
-            this.providerService = new ProviderService(fhirProviders);
+        public FhirAbstractionProvider(IEnumerable<IFhirProvider> fhirProviders)
+        {
+            this.FhirProviders = fhirProviders.ToImmutableArray();
+            this.providerService = new ProviderService(this.FhirProviders);
+        }
 
         public IAccountResource Accounts(string providerName) =>
             TryCatch(() => providerService.GetProviderByName(providerName).Accounts);

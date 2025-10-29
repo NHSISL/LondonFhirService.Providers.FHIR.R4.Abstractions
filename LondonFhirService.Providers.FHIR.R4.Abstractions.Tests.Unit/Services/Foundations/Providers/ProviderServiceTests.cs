@@ -3,6 +3,7 @@
 // ---------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Services.Foundations;
 using LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models;
 using Tynamix.ObjectFiller;
@@ -21,7 +22,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Services.F
                 new TestFhirProvider()
             };
 
-            this.providerService = new ProviderService(this.fhirProviders);
+            this.providerService = new ProviderService(this.fhirProviders.ToImmutableArray());
         }
 
         private static string GetRandomString() =>
