@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------
+// ---------------------------------------------------------
 // Copyright (c) North East London ICB. All rights reserved.
 // ---------------------------------------------------------
 
@@ -7,9 +7,9 @@ using Xeptions;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Exceptions
 {
-    public class FhirAbstractionProviderDependencyException : Xeption
+    public class IFhirResourceServiceException : Xeption
     {
-        public FhirAbstractionProviderDependencyException(string message, Xeption innerException, IDictionary data)
+        public IFhirResourceServiceException(string message, Xeption innerException, IDictionary data)
             : base(message, innerException, data)
         { }
     }

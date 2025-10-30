@@ -1,5 +1,8 @@
+// ---------------------------------------------------------
+// Copyright (c) North East London ICB. All rights reserved.
+// ---------------------------------------------------------
+
 using Hl7.Fhir.Model;
-using Hl7.Fhir.Rest;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources
 {
