@@ -19,7 +19,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>NHSISL; FHIR; Provider; Abstractions; .NET; The Standard; Standard;</PackageTags>
 		<PackageReleaseNotes>
-			Initial release of LondonFhirService.Providers.FHIR.R4.Abstractions.
+			Initial release of LondonFhirService.Providers.FHIR.R4.Abstractions
 		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<Version>0.3.4.0</Version>
