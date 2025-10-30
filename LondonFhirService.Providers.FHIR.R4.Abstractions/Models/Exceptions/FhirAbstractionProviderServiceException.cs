@@ -8,7 +8,7 @@ using Xeptions;
 
 namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Exceptions
 {
-    internal class FhirAbstractionProviderServiceException : Xeption
+    public class FhirAbstractionProviderServiceException : Xeption, IFhirServiceException
     {
         public FhirAbstractionProviderServiceException(string message, Exception innerException, IDictionary data)
             : base(message, innerException, data)
