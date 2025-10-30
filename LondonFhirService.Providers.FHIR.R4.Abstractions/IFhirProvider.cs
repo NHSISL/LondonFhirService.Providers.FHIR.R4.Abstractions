@@ -30,6 +30,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// </summary>
         string System { get; }
 
+        /// <summary>
+        /// Gets the capability statement for this provider. Describes which FHIR resources and operations
+        /// are supported, enabling discovery and validation of provider functionality at runtime.
+        /// </summary>
         ProviderCapabilities Capabilities { get; }
 
         /// <summary>Access FHIR Account resources.</summary>
