@@ -31,19 +31,19 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         /// Gets the canonical source URI for the provider. This value is placed in Bundle.meta.source to
         /// indicate the origin system of the resources.
         /// </summary>
-        public string Source => throw new NotImplementedException();
+        public abstract string Source { get; }
 
         /// <summary>
         /// Gets the short code representing this provider. This value is placed in Bundle.meta.tag.code
         /// for quick filtering and grouping of Bundles.
         /// </summary>
-        public string Code => throw new NotImplementedException();
+        public abstract string Code { get; }
 
         /// <summary>
         /// Gets the CodeSystem URI that defines the namespace for provider codes. This value is placed
         /// in Bundle.meta.tag.system alongside the Code.
         /// </summary>
-        public string System => throw new NotImplementedException();
+        public abstract string System { get; }
 
         /// <summary>
         /// Gets the provider capabilities, including the set of supported resources. This is computed lazily
