@@ -17,6 +17,10 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
     /// <typeparam name="TResource">FHIR R4 resource type.</typeparam>
     public interface IResourceOperation<TResource> where TResource : Resource
     {
+        /// <summary>
+        /// Gets the capability statement for this resource. Describes which FHIR operations
+        /// are supported, enabling discovery and validation of provider functionality at runtime.
+        /// </summary>
         ResourceCapabilities Capabilities { get; }
 
         /// <summary>

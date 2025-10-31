@@ -28,6 +28,24 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         public virtual string ProviderName => GetType().FullName ?? GetType().Name;
 
         /// <summary>
+        /// Gets the canonical source URI for the provider. This value is placed in Bundle.meta.source to
+        /// indicate the origin system of the resources.
+        /// </summary>
+        public abstract string Source { get; }
+
+        /// <summary>
+        /// Gets the short code representing this provider. This value is placed in Bundle.meta.tag.code
+        /// for quick filtering and grouping of Bundles.
+        /// </summary>
+        public abstract string Code { get; }
+
+        /// <summary>
+        /// Gets the CodeSystem URI that defines the namespace for provider codes. This value is placed
+        /// in Bundle.meta.tag.system alongside the Code.
+        /// </summary>
+        public abstract string System { get; }
+
+        /// <summary>
         /// Gets the provider capabilities, including the set of supported resources. This is computed lazily
         /// by scanning all public instance properties that implement <see cref="IResourceOperation{TResource}"/>
         /// and are non-null, and then reading each instance’s <c>Capabilities</c> property.
