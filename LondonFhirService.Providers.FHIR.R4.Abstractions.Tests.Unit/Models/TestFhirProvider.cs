@@ -16,7 +16,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Tests.Unit.Models
 
         public override string System => throw new System.NotImplementedException();
 
-        public override string Display => throw new System.NotImplementedException();
+        public override string DisplayName => throw new System.NotImplementedException();
 
         public override string FhirVersion => throw new System.NotImplementedException();
     }

@@ -32,8 +32,9 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
 
         /// <summary>
         /// Gets the display name for this provider. This value is placed in Bundle.meta.tag.display
+        /// This is a human-readable name for the provider. 
         /// </summary>
-        string Display { get; }
+        string DisplayName { get; }
 
         /// <summary>
         /// Gets the FHIR version supported by this provider. This value is placed in Bundle.meta.fhirVersion
