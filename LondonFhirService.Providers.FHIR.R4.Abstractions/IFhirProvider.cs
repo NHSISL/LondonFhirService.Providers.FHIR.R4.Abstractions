@@ -31,6 +31,16 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions
         string System { get; }
 
         /// <summary>
+        /// Gets the display name for this provider. This value is placed in Bundle.meta.tag.display
+        /// </summary>
+        string Display { get; }
+
+        /// <summary>
+        /// Gets the FHIR version supported by this provider. This value is placed in Bundle.meta.fhirVersion
+        /// </summary>
+        string FhirVersion { get; }
+
+        /// <summary>
         /// Gets the capability statement for this provider. Describes which FHIR resources and operations
         /// are supported, enabling discovery and validation of provider functionality at runtime.
         /// </summary>
