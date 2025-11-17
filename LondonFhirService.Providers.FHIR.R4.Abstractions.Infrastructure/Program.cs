@@ -15,7 +15,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Infrastructure
             scriptGenerationService.GenerateBuildScript(
                 branchName: "main",
                 projectName: "LondonFhirService.Providers.FHIR.R4.Abstractions",
-                dotNetVersion: "9.0.100");
+                dotNetVersion: "10.0.100");
 
             scriptGenerationService.GeneratePrLintScript(branchName: "main");
         }
