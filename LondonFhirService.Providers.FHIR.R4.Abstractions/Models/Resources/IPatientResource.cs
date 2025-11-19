@@ -39,7 +39,7 @@ namespace LondonFhirService.Providers.FHIR.R4.Abstractions.Models.Resources
             CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Executes the FHIR STU3 <c>$everything</c> operation for a given patient
+        /// Executes the FHIR R4 <c>$everything</c> operation for a given patient
         /// and returns the raw serialized FHIR payload (e.g. JSON) instead of a parsed
         /// <see cref="Bundle"/>.
         /// Optional parameters: <paramref name="start"/>, <paramref name="end"/>,
